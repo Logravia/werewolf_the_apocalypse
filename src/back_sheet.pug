@@ -1,0 +1,86 @@
+include mixins.pug
+
+h1 Werewolf
+
+// BACK DESCRIPTION
+
+div.back_description
+  div.label-input-wrapper
+    label.desc-label Chronicle Tenets
+    input(type='text' name=attr_chronicle_tenets)
+  div.label-input-wrapper
+    label.desc-label Touchstones
+    input(type='text' name=attr_touchstones)
+  div.label-input-wrapper
+    label.desc-label Favors & Bans
+    input(type='text' name=attr_favours_bans)
+
+// SPLIT
+div.left-right-container
+
+  //LEFT
+  div.left
+    h3 Advantages & Flaws
+    div.advantage-flaw-list
+      - for (let i=0; i<12; i++)
+        div.advantage-flaw-wrapper
+          input(type='text' name='attr_advantage_flaw'+i)
+          +radio-button-set("advantage_flaw_value", 5)
+    div.harano-hauglosk-wrapper
+      // TODO LEFT OFF HERE
+      h4 Harano
+
+
+  //RIGHT
+  div.right
+    h3 Forms of the garou
+    div.infobox-wrapper
+      div.infobox
+        h4 Homid
+        div.info
+          p Cost: Free
+          p Silver immunity
+        img
+      div.infobox
+        h4 Glabro
+        div.info
+          p Cost: One Rage Check
+          p Physical Tests: Two-Dice Bonus
+          p Social Tests: Two-Dice Penalty
+          p Regenerate: 1 per Rage Check
+      img
+      div.infobox
+        h4 Crinos
+        div.info
+          p Cost: Two Rage Checks
+          p Spend 1 Willpower per turn or frenzy
+          p Physical Tests: Four-Dice Bonus
+          p Health Levels: +4
+          p Social and Stealth Tests: Fail
+          p Regenerate: 2 Per Rage Check
+          p Claws: +3
+          p Bite: +1 Aggravated
+          p Causes Delirium
+        img
+      div.infobox
+        h4 Hispo
+        div.info
+          p Cost: One Rage Check
+          p Physical Tests:
+          p Two-Dice Bonus**
+          p Stealth Tests: Two-Dice Penalty
+          p Social Tests: Limited to wolves and Garou
+          p Regenerate: 1 per Rage Check
+          p Bite: +1 Aggravated
+        img
+      div.infobox
+        h4 Lupus
+        div.info
+          p Cost: Free
+          p Silver immunity
+          p Social Tests: Limited to wolves and Garou
+        img
+      p * Does not apply to intimidation or non-humans
+      p ** Does not apply to Stealth tests
+
+    h3 Notes
