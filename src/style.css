@@ -1,3 +1,47 @@
+/*DESCRIPTION TABLE*/
+
 .char-desc-label {
     text-transform: capitalize;
+}
+
+.description-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: auto auto; /* 2 rows with automatic height */
+    gap: 10px; /* Gap between grid items */
+}
+
+.label-input-wrapper {
+    display: flex;
+}
+
+
+/*ATTRIBUTES*/
+
+.list-container {
+    display: flex;
+}
+
+.name-value-wrapper {
+    display: flex;
+}
+
+.health-will {
+    display: flex;
+}
+
+/*SKILLS*/
+
+.skill-flexbox {
+    display:flex;
+}
+
+.skill-value-wrapper {
+    display:flex;
+}
+
+/*GENERAL*/
+
+.radio-button-set-wrapper {
+    display: flex;
 }
