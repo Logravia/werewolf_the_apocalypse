@@ -1,10 +1,4 @@
-mixin radio-button-set(attributeName, count)
-  div.radio-button-set-wrapper
-    input.clearBtn(type="radio" name="attr_"+attributeName value="0")
-    - for (let i = 1; i <= count; i++)
-      input(type="radio" name="attr_" + attributeName value=i)
-
-
+include mixins.pug
 // TITLE
 
 h1 Werewolf
