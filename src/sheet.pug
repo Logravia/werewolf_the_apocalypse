@@ -28,14 +28,14 @@ div.list-container
 div.health-will
   div.health-container
     h4 Health
-    p [][][][][]    [][][][][]
+    +radio-button-set("health", 10)
   div.willpower-container
     h4 Willpower
-    p [][][][][]    [][][][][]
+    +radio-button-set("willpower", 10)
 
 div.crinos-container
   h4 Crinos
-  p [][][][]
+    +radio-button-set("crinos", 5)
 
 // SKILLS
 h2 Skills
@@ -50,6 +50,16 @@ div.skill-flexbox
           +radio-button-set(skill, 5)
 
 h2 Renown
+div.renown-container
+  div.renown-value-wrapper
+    h3 Glory
+    +radio-button-set("glory", 5)
+  div.renown-value-wrapper
+    h3 Honor
+    +radio-button-set("honor", 5)
+  div.renown-value-wrapper
+    h3 Wisdom
+    +radio-button-set("wisdom", 5)
 
 h2 Gifts & Rites
 
@@ -62,11 +72,13 @@ table
   tr
   each _ in [1, 2, 3, 4, 5, 6, 7, 8]
       tr
-        td Test
-        td  Test
-        td  Test
-        td  Test
+        td  Blank ...
+        td  Blank ...
+        td  Blank ...
+        td  Blank ...
 
-h3 Rage [][][][][]
+div.rage-value-wrapper
+  h3 Rage
+  +radio-button-set("rage", 5)
 
-// PAGE 2
+include back_sheet.pug

@@ -3,14 +3,12 @@
 .char-desc-label {
     text-transform: capitalize;
 }
-
 .description-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: auto auto; /* 2 rows with automatic height */
     gap: 10px; /* Gap between grid items */
 }
-
 .label-input-wrapper {
     display: flex;
 }
@@ -25,7 +23,6 @@
 .name-value-wrapper {
     display: flex;
 }
-
 .health-will {
     display: flex;
 }
@@ -35,13 +32,38 @@
 .skill-flexbox {
     display:flex;
 }
-
 .skill-value-wrapper {
     display:flex;
 }
 
-/*GENERAL*/
+/*RENOWN*/
 
+.renown-container {
+    display: flex;
+}
+.renown-value-wrapper{
+    display:flex;
+}
+
+/*GIFTS & RITES*/
+
+
+/*RAGE*/
+.rage-value-wrapper {
+    display: flex;
+}
+
+/*_______________________*/
+/*PAGE 2*/
+/*_______________________*/
+
+/*SPLIT*/
+
+.left-right-container {
+    display: flex;
+}
+
+/*GENERAL*/
 .radio-button-set-wrapper {
     display: flex;
 }
