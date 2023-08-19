@@ -2,6 +2,7 @@
 
 .char-desc-label {
     text-transform: capitalize;
+    margin-bottom: 0;
 }
 .description-grid{
     display: grid;
@@ -22,6 +23,7 @@
 
 .name-value-wrapper {
     display: flex;
+    gap: 10px
 }
 .health-will {
     display: flex;
@@ -34,6 +36,8 @@
 }
 .skill-value-wrapper {
     display:flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /*RENOWN*/
@@ -66,4 +70,66 @@
 /*GENERAL*/
 .radio-button-set-wrapper {
     display: flex;
+    gap: 12px;
 }
+
+input {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.char-desc-label {
+    font-family: 'Special Elite', cursive;
+}
+
+ /* Customize the label (the container) */
+.radio-wrapper {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Hide default radio button */
+.radio-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  border: solid;
+  border-radius: 50%;
+}
+
+.radio-wrapper:hover input ~ .checkmark {
+  background-color: black;
+}
+
+.radio-wrapper input:checked ~ .checkmark {
+  background-color: black;
+}
+
+.radio-wrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
