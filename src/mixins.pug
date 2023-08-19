@@ -1,5 +1,9 @@
 mixin radio-button-set(attributeName, count)
   div.radio-button-set-wrapper
-    input.clearBtn(type="radio" name="attr_"+attributeName value="0")
+    label.radio-wrapper
+      input.clearBtn(type="radio" name="attr_"+attributeName value="0")
+      span.checkmark
     - for (let i = 1; i <= count; i++)
-      input(type="radio" name="attr_" + attributeName value=i)
+      label.radio-wrapper
+        input(type="radio" name="attr_" + attributeName value=i)
+        span.checkmark
