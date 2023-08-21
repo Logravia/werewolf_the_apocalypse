@@ -1,4 +1,5 @@
 include mixins.pug
+include hidden_attributes.pug
 // TITLE
 
 h1 Werewolf
@@ -28,7 +29,7 @@ div.list-container
 div.health-will
   div.health-container
     h4 Health
-    +radio-button-set("health", 10)
+    +healthString("health_str")
   div.willpower-container
     h4 Willpower
     +radio-button-set("willpower", 10)

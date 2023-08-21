@@ -68,9 +68,11 @@
 }
 
 /*GENERAL*/
-.radio-button-set-wrapper {
-    display: flex;
-    gap: 12px;
+.health-string {
+    font-size: 14pt;
+    font-family: "Special Elite", cursive;
+    font-weight: 900;
+    text-shadow: 0.3px 0 0 currentColor;
 }
 
 input {
@@ -91,45 +93,56 @@ input:focus {
     font-family: 'Special Elite', cursive;
 }
 
- /* Customize the label (the container) */
-.radio-wrapper {
-  display: block;
-  position: relative;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
+
+/*DOT, CHECKBOX STYLING*/
+
+/* Hide actual dot/checkbox */
+input.sheet-defaultRadioBox,
+input.sheet-defaultCheckBox
+{
+    position: absolute;
+    opacity: 0;
+    width: 19px;
+    height: 22px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hide default radio button */
-.radio-wrapper input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+/* Styles common to fake dot and checkbox */
+input.sheet-defaultRadioBox + span::before,
+input.sheet-defaultCheckBox + span::before
+{
+    border: solid 2px #3c3737;
+    line-height: 14px;
+    text-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-/* Custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 12px;
-  width: 12px;
-  border: solid;
-  border-radius: 50%;
+/* Styles unique to fake dot (checked or left of checked) */
+input.sheet-defaultRadioBox + span::before
+{
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #3c3737;
 }
 
-.radio-wrapper:hover input ~ .checkmark {
-  background-color: black;
+/* Styles unique to fake checkbox (unchecked) */
+input.sheet-defaultCheckBox + span::before
+{
+    position: relative;
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    border-radius: 3px;
 }
 
-.radio-wrapper input:checked ~ .checkmark {
-  background-color: black;
+/* Remove dot from all radios _after_ selected one */
+input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
+{
+    background-color: white;
 }
-
-.radio-wrapper input:checked ~ .checkmark:after {
-  display: block;
-}
-
