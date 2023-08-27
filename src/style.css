@@ -38,6 +38,23 @@
     display: flex;
 }
 
+.name-roll-button-wrapper {
+    display: flex;
+}
+
+
+.roll-btn-reset-btn-wrapper {
+    display: none;
+}
+
+.attribute:hover + .roll-btn-reset-btn-wrapper {
+    display:block;
+}
+
+.roll-btn-reset-btn-wrapper:hover {
+    display:block;
+}
+
 /*SKILLS*/
 
 .skill-flexbox {

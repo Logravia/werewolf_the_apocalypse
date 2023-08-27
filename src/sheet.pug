@@ -23,7 +23,11 @@ div.list-container
       h3 #{title}
       each attr in list
         div.name-value-wrapper
-          p.attribute #{attr}
+          div.name-roll-button-wrapper
+            p.attribute #{attr}
+            div.roll-btn-reset-btn-wrapper
+              button Roll
+              button X
           +radio-button-set(attr, 5)
 
 div.health-will
