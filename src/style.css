@@ -40,18 +40,21 @@
 
 .name-roll-button-wrapper {
     display: flex;
+    position: relative;
 }
 
-
-.roll-btn-reset-btn-wrapper {
+.roll-btn-wrapper {
     display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%)
 }
 
-.attribute:hover + .roll-btn-reset-btn-wrapper {
+.attribute:hover + .roll-btn-wrapper {
     display:block;
 }
 
-.roll-btn-reset-btn-wrapper:hover {
+.roll-btn-wrapper:hover {
     display:block;
 }
 
