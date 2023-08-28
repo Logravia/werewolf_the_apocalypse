@@ -43,6 +43,7 @@
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: auto auto; /* 2 rows with automatic height */
     gap: 10px; /* Gap between grid items */
+    margin-bottom: 20px;
 }
 .label-input-wrapper {
     display: flex;
@@ -63,6 +64,7 @@
 .list-container {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 25px;
 }
 
 .name-value-wrapper {
@@ -111,13 +113,15 @@
 
 .skill-flexbox {
     display:flex;
+    justify-content: space-between;
 }
 
 
 .skill-value-wrapper {
-    display:flex;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
+    justify-content: space-between;
 }
 
 /*RENOWN*/
