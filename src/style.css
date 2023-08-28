@@ -1,3 +1,11 @@
+/*TITLE*/
+.werewolf-title {
+    font-family: "Special Elite", cursive;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
 /*DESCRIPTION TABLE*/
 
 .char-desc-label {
