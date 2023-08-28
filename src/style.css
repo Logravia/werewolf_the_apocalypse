@@ -22,6 +22,8 @@
 
 .category-title, .list-title {
     font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .attribute, .skill {
@@ -60,12 +62,27 @@
 
 .list-container {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .name-value-wrapper {
     display: flex;
-    gap: 10px
+    justify-content: space-between;
+    gap: 30px
 }
+
+
+.centering-border {
+    border: solid 1px;
+    position: relative;
+    top: 25px;
+    height: 80px;
+}
+
+.centering-border:last-of-type {
+    display: none;
+}
+
 .health-will {
     display: flex;
 }
@@ -95,6 +112,8 @@
 .skill-flexbox {
     display:flex;
 }
+
+
 .skill-value-wrapper {
     display:flex;
     align-items: center;
