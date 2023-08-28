@@ -1,4 +1,5 @@
 include mixins.pug
+include hidden_attributes.pug
 
 h1 Werewolf
 
@@ -84,3 +85,6 @@ div.left-right-container
       p ** Does not apply to Stealth tests
 
     h3 Notes
+
+    script(type="text/worker")
+      include index.js
