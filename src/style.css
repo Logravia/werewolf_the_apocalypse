@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive&family=Oswald&display=swap');
+
 /*BORDER*/
 .tab-content {
     --s: 10px; /* control the size */
@@ -14,6 +18,16 @@
     text-align: center;
     margin-bottom: 25px;
     font-size: 50px;
+}
+
+.category-title, .list-title {
+    font-family: 'Oswald', sans-serif;
+}
+
+.attribute, .skill {
+    font-family: 'Cutive', serif;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 /*DESCRIPTION TABLE*/
@@ -134,7 +148,6 @@ input:focus {
   outline: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 .char-desc-label {
     font-family: 'Special Elite', cursive;
