@@ -175,3 +175,11 @@ input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
 {
     background-color: white;
 }
+
+.remove-value-radio{
+    display: none;
+}
+
+.remove-value-radio + span{
+    display: none;
+}

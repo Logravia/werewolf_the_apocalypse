@@ -1,5 +1,7 @@
 mixin radio-button-set(attributeName, count)
   div.radio-button-set-wrapper
+    input.sheet-defaultRadioBox.remove-value-radio(type="radio" name="attr_" + attributeName value=0 "checked")
+    span
     - for (let i = 1; i <= count; i++)
         input.sheet-defaultRadioBox(type="radio" name="attr_" + attributeName value=i)
         span
