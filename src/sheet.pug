@@ -6,11 +6,12 @@ h1.werewolf-title Werewolf
 
 // DESCRIPTION TABLE
 - const character_descriptors = ["name", "concept", "patron", "chronicle", "auspices", "tribe"]
-div.description-grid
- each word in character_descriptors
-   div.label-input-wrapper
-     label.char-desc-label= word + ":"
-     input(type='text' name=`attr_${word}`)
+div.description-grid-wrapper
+  div.description-grid
+   each word in character_descriptors
+     div.label-input-wrapper
+       label.char-desc-label= word + ":"
+       input.description-input(type='text' name=`attr_${word}`)
 
 // ATTRIBUTES
 - const attributes = {physical: ["strength", "dexterity", "stamina"], social: ["charisma", "manipulation", "composure"],  mental: ["intelligence", "wits", "resolve"] }
@@ -33,14 +34,14 @@ div.list-container
 div.health-will
   div.health-container
     h4 Health
-    +healthString("health_str")
+    +checkbox-set("health", 10)
   div.willpower-container
     h4 Willpower
-    +radio-button-set("willpower", 10)
+    +checkbox-set("willpower", 10)
 
 div.crinos-container
   h4 Crinos
-    +radio-button-set("crinos", 5)
+    +checkbox-set("crinos", 4)
 
 // SKILLS
 h2.category-title Skills
