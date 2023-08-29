@@ -124,6 +124,13 @@
     display:block;
 }
 
+/*HEALTH, WILLPOWER, CRINOS*/
+
+.crinos-container {
+    width: 120px;
+    transform: rotate(-8deg)
+}
+
 /*SKILLS*/
 
 .skill-flexbox {
@@ -143,9 +150,14 @@
 
 .renown-container {
     display: flex;
+    border: 1px solid;
+    justify-content: space-between;
+    padding: 5px 8px;
 }
 .renown-value-wrapper{
     display:flex;
+    gap: 40px;
+    align-items: center;
 }
 
 /*GIFTS & RITES*/
@@ -194,9 +206,47 @@ input:focus {
 
 /*DOT, CHECKBOX STYLING*/
 
+.checkbox-set-wrapper {
+    display: flex;
+}
+
+input.sheet-defaultCheckbox[type="checkbox"] {
+  display: none;
+}
+
+.fake-checkbox {
+  position: relative;
+  border: 3px solid #000;
+  border-radius: 20% 25% 15% 12%;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: relative;
+}
+
+input[type="checkbox"][value="empty"] + .fake-checkbox {
+    background: white;
+}
+
+input[type="checkbox"][value="full"] + .fake-checkbox {
+    background: green;
+}
+
+input[type="checkbox"][value="grievous"] + .fake-checkbox {
+    background: red;
+}
+
+input[type="checkbox"][value="slash"] + .fake-checkbox {
+    background: yellow;
+}
+
+input[type=checkbox]:checked + .fake-checkbox {
+  background: #f00;
+  color: #fff;
+}
+
 /* Hide actual dot/checkbox */
 input.sheet-defaultRadioBox,
-input.sheet-defaultCheckBox
 {
     position: absolute;
     opacity: 0;
@@ -209,7 +259,6 @@ input.sheet-defaultCheckBox
 
 /* Styles common to fake dot and checkbox */
 input.sheet-defaultRadioBox + span::before,
-input.sheet-defaultCheckBox + span::before
 {
     border: solid 2px #3c3737;
     line-height: 14px;
