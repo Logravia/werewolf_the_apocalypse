@@ -31,17 +31,17 @@ div.list-container
           +radio-button-set(attr, 5)
     div.centering-border
 
-div.health-will
-  div.health-container
-    h4 Health
-    +checkbox-set("health", 10)
-  div.willpower-container
-    h4 Willpower
-    +checkbox-set("willpower", 10)
-
-div.crinos-container
-  h4 Crinos
-    +checkbox-set("crinos", 4)
+div.health-will-crinos
+  div.health-will
+    div.health-container
+      h4 Health
+      +checkbox-set("health", 10)
+    div.willpower-container
+      h4 Willpower
+      +checkbox-set("willpower", 10)
+  div.crinos-container
+    h4 Crinos
+      +checkbox-set("crinos", 4)
 
 // SKILLS
 h2.category-title Skills
@@ -70,19 +70,23 @@ div.renown-container
 
 h2.category-title Gifts & Rites
 
-table
+table.gift-rite-table
   tr
-    th Name
-    th Pool
-    th Cost
-    th Notes
+    th.table-name Name
+    th.table-pool Pool
+    th.table-cost Cost
+    th.table-notes Notes
   tr
-  each _ in [1, 2, 3, 4, 5, 6, 7, 8]
+  each i in [1, 2, 3, 4, 5, 6, 7, 8]
       tr
-        td  Blank ...
-        td  Blank ...
-        td  Blank ...
-        td  Blank ...
+        td
+          input.table-input(type="text" name=`attr_rites_name_${i}`)
+        td
+          input.table-input(type="text" name=`attr_rites_pool_${i}`)
+        td
+          input.table-input(type="text" name=`attr_rites_cost_${i}`)
+        td
+          input.table-input(type="text" name=`attr_rites_notes_${i}`)
 
 div.rage-value-wrapper
   h3 Rage

@@ -62,6 +62,7 @@
     font-family: "Cutive", serif;
     text-align: center;
     height: 24px;
+    font-weight: bold;
 }
 
 .label-input-wrapper input {
@@ -150,6 +151,10 @@
 
 /*RENOWN*/
 
+h3 {
+    font-family: "Oswald", sans-serif;
+}
+
 .renown-container {
     display: flex;
     border: 1px solid;
@@ -162,7 +167,43 @@
     align-items: center;
 }
 
-/*GIFTS & RITES*/
+/*GIFTS & RITES TABLE*/
+.gift-rite-table {
+    width: 100%;
+    border: solid 1px;
+}
+
+.table-name {
+    width: 21%
+}
+
+.table-pool {
+    width: 21%
+}
+
+.table-cost {
+    width: 8%
+}
+
+.table-notes {
+    width: 50%;
+}
+
+.gift-rite-table th {
+    font-family: "Special Elite", cursive;
+    font-size: 1.2em;
+}
+
+.gift-rite-table th, .gift-rite-table tr, .gift-rite-table td {
+    border: solid 1px;
+    padding: 4px;
+}
+
+.gift-rite-table .table-input {
+    width: 100%;
+    font-family: "Cutive", serif;
+    font-weight: bold;
+}
 
 
 /*RAGE*/
