@@ -11,9 +11,8 @@ mixin radio-button-set(attributeName, count)
 mixin checkbox-set(attributeName, count)
   div.checkbox-set-wrapper
     - for (let i = 1; i <= count; i++)
+      label
         input.sheet-defaultCheckbox(type="checkbox" name=`attr_${attributeName}_${i}` value=i)
-        span
-        span &nbsp;
 
 mixin healthString(name)
   input.health-string(type="text" name="attr_"+name "readonly")
