@@ -295,10 +295,38 @@ h3 {
     padding: 6px;
 }
 
-.flaw-table h3 {
+.flaw-table h3, .right h3 {
     text-align: center;
     font-size: 22px;
     margin-bottom: 22px;
+}
+
+/*FORMS OF THE GAROU*/
+
+.infobox-wrapper {
+    border: solid 1px;
+}
+
+.infobox {
+    padding: 10px;
+    display: flex;
+    gap: 24px;
+    border-bottom: solid 1px;
+    font-family: "Cutive", serif;
+}
+
+.infobox h4{
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+}
+
+.infobox:last-of-type {
+    border-bottom: hidden;
+}
+
+.infobox p {
+    margin: 0;
+    font-family: "Cutive", serif;
 }
 
 /*GENERAL*/
