@@ -25,14 +25,21 @@ div.left-right-container
 
   //LEFT
   div.left
-    h3 Advantages & Flaws
-    div.advantage-flaw-list
-      - for (let i=0; i<12; i++)
-        div.advantage-flaw-wrapper
-          input(type='text' name='attr_advantage_flaw'+i)
-          +radio-button-set("advantage_flaw_value", 5)
+    table.flaw-table
+      thead
+        tr
+          th(colspan="2")
+            h3 Advantages & Flaws
+      tbody
+        - for (let i=0; i<12; i++)
+          tr
+            td
+              input.table-input(type='text' name='attr_advantage_flaw'+i)
+            td
+              +radio-button-set("advantage_flaw_value"+i, 5)
+
+
     div.harano-hauglosk-wrapper
-      // TODO LEFT OFF HERE
       h4 Harano
 
 

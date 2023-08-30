@@ -219,10 +219,12 @@ h3 {
 
 .left-right-container {
     display: flex;
+    justify-content: space-around;
 }
 
 .tenet-table {
     width: 100%;
+    margin-bottom: 38px;
 }
 
 .tenet-table .long-input {
@@ -264,7 +266,7 @@ h3 {
     font-size: 1.2em;
 }
 
-tbody tr, tbody td {
+.tenet-table tbody tr, .tenet-table tbody  {
     border: solid 1px;
 }
 
@@ -275,6 +277,28 @@ tbody tr, tbody td {
 
 .tenet-table tbody td {
     height: 100%;
+    border: solid 1px;
+}
+
+/*ADVANTAGE FLAW TABLE*/
+
+.flaw-table th {
+    border: hidden;
+    border-bottom: solid 1px;
+}
+
+.flaw-table tbody, .flaw-table tr {
+    border: solid 1px;
+}
+
+.flaw-table td {
+    padding: 6px;
+}
+
+.flaw-table h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 22px;
 }
 
 /*GENERAL*/
@@ -345,7 +369,7 @@ input[type=checkbox]:checked + .fake-checkbox {
 }
 
 /* Hide actual dot/checkbox */
-input.sheet-defaultRadioBox,
+input.sheet-defaultRadioBox
 {
     position: absolute;
     opacity: 0;
@@ -357,11 +381,11 @@ input.sheet-defaultRadioBox,
 }
 
 /* Styles common to fake dot and checkbox */
-input.sheet-defaultRadioBox + span::before,
+input.sheet-defaultRadioBox + span::before
 {
     border: solid 2px #3c3737;
     line-height: 14px;
-    text-align: middle;
+    text-align: center;
     display: inline-block;
     vertical-align: middle;
 }
