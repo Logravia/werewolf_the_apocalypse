@@ -282,6 +282,10 @@ h3 {
 
 /*ADVANTAGE FLAW TABLE*/
 
+.flaw-table {
+    margin-bottom: 20px;
+}
+
 .flaw-table th {
     border: hidden;
     border-bottom: solid 1px;
@@ -327,6 +331,12 @@ h3 {
 .infobox p {
     margin: 0;
     font-family: "Cutive", serif;
+}
+
+/*HARANO HAUGLOSK*/
+.harano-hauglosk-wrapper {
+    display: flex;
+    gap: 20px;
 }
 
 /*GENERAL*/

@@ -40,8 +40,13 @@ div.left-right-container
 
 
     div.harano-hauglosk-wrapper
-      h4 Harano
+      div.harano-wrapper
+        h4 Harano
+        +radio-button-set("hauglosk", 5)
 
+      div.hauglosk-wrapper
+        h4 Hauglosk
+        +radio-button-set("harano", 5)
 
   //RIGHT
   div.right
