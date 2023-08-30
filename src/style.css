@@ -227,7 +227,7 @@ h3 {
     margin-bottom: 38px;
 }
 
-.tenet-table .long-input {
+.tenet-table .long-input, .appearance-history-wrapper .long-input {
     height: 100%;
     width: 100%;
     background-color: white;
@@ -235,21 +235,24 @@ h3 {
     padding: 0;
     margin: 0;
     resize: none;
-    padding: 10px;
+    padding: 14px;
     box-sizing: border-box;
     font-family: "Cutive", serif;
     font-weight: bold;
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.tenet-table .long-input:focus-visible {
+.tenet-table .long-input:focus-visible,
+.appearance-history-wrapper .long-input:focus-visible{
     outline: none;
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
 }
 
 
-.tenet-table .long-input:hover {
+.tenet-table .long-input:hover,
+.appearance-history-wrapper .long-input:focus-visible
+{
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
 }
@@ -337,8 +340,21 @@ h3 {
 .harano-hauglosk-wrapper {
     display: flex;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
+/*APPEARANCE HISTORY WRAPPER*/
+
+.appearance, .history {
+    position: relative;
+}
+
+.appearance .floating-title, .history .floating-title {
+    position: absolute;
+    top: -8%;
+    width: 100%;
+    text-align: center;
+}
 /*GENERAL*/
 .health-string {
     font-size: 14pt;
@@ -364,6 +380,23 @@ input:focus {
     font-family: 'Special Elite', cursive;
 }
 
+/*APPEARANCE HISTORY*/
+
+.appearance-history-wrapper {
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.appearance {
+    border-bottom: solid 1px;
+    flex-grow: 1;
+}
+
+.history {
+    flex-grow: 1;
+}
 
 /*DOT, CHECKBOX STYLING*/
 
