@@ -227,7 +227,8 @@ h3 {
     margin-bottom: 38px;
 }
 
-.tenet-table .long-input, .appearance-history-wrapper .long-input {
+.tenet-table .long-input, .appearance-history-wrapper .long-input,
+.notes .long-input {
     height: 100%;
     width: 100%;
     background-color: white;
@@ -243,7 +244,8 @@ h3 {
 }
 
 .tenet-table .long-input:focus-visible,
-.appearance-history-wrapper .long-input:focus-visible{
+.appearance-history-wrapper .long-input:focus-visible,
+.notes .long-input:focus-visible {
     outline: none;
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
@@ -251,7 +253,8 @@ h3 {
 
 
 .tenet-table .long-input:hover,
-.appearance-history-wrapper .long-input:focus-visible
+.appearance-history-wrapper .long-input:hover,
+.notes .long-input:hover
 {
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
@@ -396,6 +399,30 @@ input:focus {
 
 .history {
     flex-grow: 1;
+}
+
+/*NOTES*/
+
+.notes {
+    position: relative;
+    height: 200px
+}
+
+.notes-wrapper {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes .floating-title {
+    position: absolute;
+    top: -6%;
+    width: 100%;
+    text-align: center;
+}
+
+.notes {
+    border: solid 1px;
 }
 
 /*DOT, CHECKBOX STYLING*/
