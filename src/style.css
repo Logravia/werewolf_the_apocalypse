@@ -199,7 +199,7 @@ h3 {
     padding: 4px;
 }
 
-.gift-rite-table .table-input {
+.table-input {
     width: 100%;
     font-family: "Cutive", serif;
     font-weight: bold;
@@ -215,10 +215,66 @@ h3 {
 /*PAGE 2*/
 /*_______________________*/
 
-/*SPLIT*/
+/*SPLIT PAGE 2*/
 
 .left-right-container {
     display: flex;
+}
+
+.tenet-table {
+    width: 100%;
+}
+
+.tenet-table .long-input {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: hidden;
+    padding: 0;
+    margin: 0;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: "Cutive", serif;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.tenet-table .long-input:focus-visible {
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
+}
+
+
+.tenet-table .long-input:hover {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 1px 1px 104px -20px rgba(0,0,0,0.41);
+}
+
+
+
+.tenet-table thead tr{
+    border: none;
+}
+
+.tenet-table thead th {
+    text-align: center;
+    font-family: "Special Elite", cursive;
+    font-size: 1.2em;
+}
+
+tbody tr, tbody td {
+    border: solid 1px;
+}
+
+
+.tenet-table tbody {
+    height: 165px
+}
+
+.tenet-table tbody td {
+    height: 100%;
 }
 
 /*GENERAL*/

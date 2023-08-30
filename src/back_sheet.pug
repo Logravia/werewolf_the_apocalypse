@@ -5,16 +5,20 @@ h1.werewolf-title Werewolf
 
 // BACK DESCRIPTION
 
-div.back_description
-  div.label-input-wrapper
-    label.desc-label Chronicle Tenets
-    input(type='text' name=attr_chronicle_tenets)
-  div.label-input-wrapper
-    label.desc-label Touchstones
-    input(type='text' name=attr_touchstones)
-  div.label-input-wrapper
-    label.desc-label Favors & Bans
-    input(type='text' name=attr_favours_bans)
+table.tenet-table
+  thead
+    tr
+      th Chronicle Tenets
+      th Touchstones
+      th Favors &amp; Bans
+  tbody
+    tr
+      td
+        textarea.long-input
+      td
+        textarea.long-input
+      td
+        textarea.long-input
 
 // SPLIT
 div.left-right-container
