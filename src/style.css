@@ -171,6 +171,7 @@ h3 {
 .gift-rite-table {
     width: 100%;
     border: solid 1px;
+    margin-bottom: 20px;
 }
 
 .table-name {
@@ -209,6 +210,8 @@ h3 {
 /*RAGE*/
 .rage-value-wrapper {
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 /*_______________________*/
@@ -315,6 +318,7 @@ h3 {
 
 .infobox-wrapper {
     border: solid 1px;
+    margin-bottom: 4px;
 }
 
 .infobox {
@@ -345,6 +349,7 @@ h3 {
     gap: 20px;
     margin-bottom: 20px;
 }
+
 
 /*APPEARANCE HISTORY WRAPPER*/
 
@@ -389,7 +394,7 @@ input:focus {
     border: solid 1px;
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 500px;
 }
 
 .appearance {
@@ -424,6 +429,34 @@ input:focus {
 .notes {
     border: solid 1px;
 }
+
+/*ASTERISK NOTES*/
+.asterisk-box {
+    margin-bottom: 15px;
+}
+
+.asterisk-box p {
+    margin: 0;
+    font-size: 10px;
+}
+
+/*EXPIERIENCE*/
+
+.total-wrapper, .spent-wrapper {
+    display: flex;
+}
+
+.spacer-dots {
+    position: relative;
+}
+
+.spacer-dots p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
 
 /*DOT, CHECKBOX STYLING*/
 
