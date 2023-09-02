@@ -3,7 +3,7 @@ const WerewolfApo = (function () {
   const DICE_TYPE = 10
   const ROLL_TYPES = {check: "check", harano: "harano", hauglosk: "hauglosk", willpower: "willpower", attribute: "attribute", "attributeAttribute": "attribute + attribute", attributeSkill: "attribute + skill", invalid: "invalid roll"}
   const OUTCOMES = { failure: "failure", success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
-  const TEMPLATE = '&{template:werewolf-roll}'
+  const TEMPLATE = '&{template:werewolf-roll} '
 
   function brutalOutcome(rollResult, rage) {
     // starting dice are considered rage dice in the pool
@@ -15,7 +15,9 @@ const WerewolfApo = (function () {
   }
 
   function successCount(diceRolls) {
-    return diceRolls.filter(rollResult => successDie(rollResult))
+    let baseSuccesses = diceRolls.filter(rollResult => successDie(rollResult)).length
+    let totalSuccessCount = baseSuccesses + (criticalCount(diceRolls) * 2)
+    return totalSuccessCount
   }
 
   // Extracts dicepool names from a chat call
@@ -63,10 +65,6 @@ const WerewolfApo = (function () {
     return 6 <= die
   }
 
-  function successCount(diceRolls) {
-    return diceRolls.filter(roll=>successDie(roll)).length
-  }
-
   function rollOutcome(diceRolls, rage) {
     let successes = successCount(diceRolls)
 
@@ -84,7 +82,7 @@ const WerewolfApo = (function () {
   }
 
   function criticalRoll(diceRolls) {
-    return criticalCount >= criticalCount(diceRolls)
+    return 2 >= criticalCount(diceRolls)
   }
 
   function criticalCount(rollResult) {
@@ -96,7 +94,6 @@ const WerewolfApo = (function () {
 
   function rollType(msg) {
     let names  = dicePoolNames(msg)
-    log(names);
 
     if (names.length === 1) {
       if (ROLL_TYPES[names[0]] !== undefined) {
@@ -114,21 +111,22 @@ const WerewolfApo = (function () {
     return ROLL_TYPES.invalid;
   }
 
-  function rollMessage(diceRolls, rollOutcome, type, rage) {
-    return TEMPLATE + `{name=${type}} {{dice=${diceRolls}}} {{outcome=${rollOutcome}} {{rage=${rage}}}}` ;
+  function rollMessage(diceRolls, rollOutcome, type, rage, successes) {
+    return TEMPLATE + `{{rollName=${type}}} {{dice=${diceRolls}}} {{outcome=${rollOutcome}}} {{rage=${rage}}} {{successes=${successes}}}`
   }
 
   return {
     // public
     roll: (msg) => {
       let rolls = rollDice(dicePoolSize(msg))
+      let successes = successCount(rolls)
       let type = rollType(msg)
       let rage = rageAmount(msg.rolledByCharacterId)
       let outcome = rollOutcome(rolls, rage)
 
       let sender = `character|${msg.rolledByCharacterId}`
 
-      let message = rollMessage(rolls, outcome, type, rage)
+      let message = rollMessage(rolls, outcome, type, rage, successes)
 
       sendChat(sender, message)
     }
