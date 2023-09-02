@@ -1,7 +1,8 @@
 const WerewolfApo = (function () {
   // private variables and functions
   const DICE_TYPE = 10
-  const OUTCOMES = { failure: "failure", success: "success", totalFailure: "total failure", criticalSuccess: "critical success", brutalOutcome: "Brutal outcome" }
+  const ROLL_TYPES = {check: "check", harano: "harano", hauglosk: "hauglosk", willpower: "willpower", attribute: "attribute", "attributeAttribute": "attribute + attribute", attributeSkill: "attribute + skill", invalid: "invalid roll"}
+  const OUTCOMES = { failure: "failure", success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
   const TEMPLATE = '&{template:werewolf-roll}'
 
   function brutalOutcome(rollResult, rage) {
