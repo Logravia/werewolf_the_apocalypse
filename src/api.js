@@ -9,7 +9,7 @@ const WerewolfApo = (function () {
     // starting dice are considered rage dice in the pool
     let rageDice = rollResult.slice(0, rage)
     // all dice 2 or below are brutal dice
-    let brutalResultCount = rageDice.filter(result => result <= 2)
+    let brutalResultCount = rageDice.filter(result => result <= 2).length
     // if there are two or more brutal dice it's a brutal outcome
     return brutalResultCount >= 2
   }
