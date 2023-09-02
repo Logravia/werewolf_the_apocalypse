@@ -55,30 +55,32 @@ const WerewolfApo = (function () {
     return dicepool.reduce((acc, curVal) => acc + curVal);
   }
 
+  function rageAmount(charId){
+    return getAttrByName(charId, "rage")
+  }
+
   function successDie(die) {
     return 6 <= die
   }
 
-  function rollOutcome(diceRolls, difficulty, rage) {
+  function successCount(diceRolls) {
+    return diceRolls.filter(roll=>successDie(roll)).length
+  }
+
+  function rollOutcome(diceRolls, rage) {
     let successes = successCount(diceRolls)
 
     if (brutalOutcome(diceRolls, rage)) {
       return OUTCOMES.brutalOutcome;
     }
-
-    if (successes >= difficulty && criticalRoll(diceRolls)) {
-      return OUTCOMES.criticalSuccess;
+    if (criticalRoll(diceRolls)) {
+      return OUTCOMES.criticalHit;
     }
-
-    if (successes >= difficulty) {
-      return OUTCOMES.success;
-    }
-
     if (successes === 0) {
       return OUTCOMES.totalFailure;
     }
 
-    return OUTCOMES.failure;
+    return OUTCOMES.neutral
   }
 
   function criticalRoll(diceRolls) {
@@ -88,12 +90,10 @@ const WerewolfApo = (function () {
   function criticalCount(rollResult) {
     // criticals are pairs of 10s
     let amountOfTens = rollResult.filter(result => result == 10).length;
-    let criticalCount = floor(amountOfTens / 2)
+    let criticalCount = Math.floor(amountOfTens / 2)
     return criticalCount
   }
 
-  function returnMessage(diceRolls, rollOutcome, type) {
-    return TEMPLATE + `{name=${type}}` + "{{dice=5 8 9 10 5}}";
   function rollType(msg) {
     let names  = dicePoolNames(msg)
     log(names);
