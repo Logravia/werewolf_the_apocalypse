@@ -113,17 +113,24 @@ const WerewolfApo = (function () {
 
     return ROLL_TYPES.invalid;
   }
+
+  function rollMessage(diceRolls, rollOutcome, type, rage) {
+    return TEMPLATE + `{name=${type}} {{dice=${diceRolls}}} {{outcome=${rollOutcome}} {{rage=${rage}}}}` ;
   }
 
   return {
     // public
     roll: (msg) => {
-      let diceCount = dicePoolSize(msg);
-      let rolls = rollDice(diceCount)
+      let rolls = rollDice(dicePoolSize(msg))
+      let type = rollType(msg)
+      let rage = rageAmount(msg.rolledByCharacterId)
+      let outcome = rollOutcome(rolls, rage)
 
-      log(rolls);
+      let sender = `character|${msg.rolledByCharacterId}`
 
-      // sendChat("Roll", returnMessage())
+      let message = rollMessage(rolls, outcome, type, rage)
+
+      sendChat(sender, message)
     }
   }
 })();
