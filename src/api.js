@@ -1,7 +1,8 @@
-const WerewolfApo = (function() {
+const WerewolfApo = (function () {
   // private variables and functions
   const DICE_TYPE = 10
   const OUTCOMES = { failure: "failure", success: "success", totalFailure: "total failure", criticalSuccess: "critical success", brutalOutcome: "Brutal outcome" }
+  const TEMPLATE = '&{template:werewolf-roll}'
 
   function brutalOutcome(rollResult, rage) {
     // starting dice are considered rage dice in the pool
@@ -18,7 +19,7 @@ const WerewolfApo = (function() {
 
   // Extracts dicepool names from a chat call
   function dicePoolNames(msg) {
-    let args = msg.split(' ')
+    let args = msg.content.split(' ')
 
     // valid msg contains "!rollWerewolf dicepoolX [dicepoolY]"
     if (args.length == 3) {
@@ -34,15 +35,23 @@ const WerewolfApo = (function() {
     let rollResult = []
 
     for (let i = 0; i < count; i++) {
-      diceResult.push(randomInteger(DICE_TYPE));
+      rollResult.push(randomInteger(DICE_TYPE));
     }
 
     return rollResult;
   }
 
   //returns total dice pool size
-  function dicePoolSize(names) {
+  function dicePoolSize(msg) {
+    let names = dicePoolNames(msg);
+    let charId = msg.rolledByCharacterId
 
+    let dicepool = [getAttrByName(charId, names[0]), getAttrByName(charId, names[1])]
+
+    dicepool = dicepool.map(val=>parseInt(val));
+    dicepool = dicepool.filter(val=>!isNaN(val))
+
+    return dicepool.reduce((acc, curVal) => acc + curVal);
   }
 
   function successDie(die) {
@@ -71,8 +80,8 @@ const WerewolfApo = (function() {
     return OUTCOMES.failure;
   }
 
-  function criticalRoll(rollResult) {
-    return criticalCount >= criticalCount(rollResult)
+  function criticalRoll(diceRolls) {
+    return criticalCount >= criticalCount(diceRolls)
   }
 
   function criticalCount(rollResult) {
@@ -82,21 +91,29 @@ const WerewolfApo = (function() {
     return criticalCount
   }
 
-    return {
-      // Public functions
+  function returnMessage(diceRolls, rollOutcome, type) {
+    return TEMPLATE + `{name=${type}}` + "{{dice=5 8 9 10 5}}";
+  }
+
+  return {
+    // public
+    roll: (msg) => {
+      let diceCount = dicePoolSize(msg);
+      let rolls = rollDice(diceCount)
+
+      log(rolls);
+
+      // sendChat("Roll", returnMessage())
     }
+  }
 })();
 
+on('chat:message', msg => {
+  if ('api' === msg.type && /^!rollWerewolf(\b\s|$)/i.test(msg.content)) {
+    WerewolfApo.roll(msg);
+  }
+});
+
 on('ready', () => {
-  const roll = (player, dicepool1, dicepool2) => {
-    sendChat("Jack", `{&{template:werewolf-roll} {{name=Jack}} {{normalDice=No dice}}`);
-  };
-
-  on('chat:message', msg => {
-    if ('api' === msg.type && /^!rollWerewolf(\b\s|$)/i.test(msg.content)) {
-      roll();
-    }
-  });
-
   sendChat('API', "I'm locked and loaded.")
 });
