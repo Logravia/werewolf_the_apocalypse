@@ -93,6 +93,25 @@ const WerewolfApo = (function () {
 
   function returnMessage(diceRolls, rollOutcome, type) {
     return TEMPLATE + `{name=${type}}` + "{{dice=5 8 9 10 5}}";
+  function rollType(msg) {
+    let names  = dicePoolNames(msg)
+    log(names);
+
+    if (names.length === 1) {
+      if (ROLL_TYPES[names[0]] !== undefined) {
+        return ROLL_TYPES[names[0]]
+      } else {
+        // if name is not contained in types it must be an attribute of some kind
+        return ROLL_TYPES.attribute
+      }
+    }
+
+    if (names.length === 2) {
+      return ROLL_TYPES.attributeSkill
+    }
+
+    return ROLL_TYPES.invalid;
+  }
   }
 
   return {
