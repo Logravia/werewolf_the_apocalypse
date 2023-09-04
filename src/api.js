@@ -18,8 +18,7 @@ const WerewolfApo = (function () {
   const DICE_TYPE = 10
   const ROLL_TYPES = {check: "check", harano: "harano", hauglosk: "hauglosk", willpower: "willpower", attribute: "attribute", "attributeAttribute": "attribute + attribute", attributeSkill: "attribute + skill", invalid: "invalid roll"}
   const OUTCOMES = {success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
-  const RAGE_DICE = diceURLs("rage")
-  const DICE = diceURLs("normal")
+  const DICE_URLS = {rage: diceURLs("rage"), normal: diceURLs("normal")}
   const GRAPHICS = {success: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/success.png",
                     totalFailure: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/failure.png",
                     criticalHit: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/critical.png",
@@ -142,8 +141,22 @@ const WerewolfApo = (function () {
     return ROLL_TYPES.invalid;
   }
 
+  function diceImages(type="normal", roll=[]) {
+    let dice = DICE_URLS[type];
+    let imgStr = ""
+    roll.forEach((res,i)=>{
+      imgStr+=`<img src="${dice[res-1]}" alt="d10, ${i+1}" width="30px" height="30px"/>`
+    })
+
+    log(imgStr)
+    return imgStr
+  }
+
   function rollMessage(dt) {
-    return TEMPLATE + `{{rolls=${dt.rolls}}} {{successes=${dt.successes}}} {{type=${dt.type}}} {{rage=${dt.rage}}} {{outcome=${dt.outcome}}} {{rageDice=${dt.rageDiceResult}}} {{normalDice=${dt.normalDiceResult}}}`
+    let rageDice = diceImages("rage", dt.rageDiceResult);
+    let normalDice = diceImages("normal", dt.normalDiceResult)
+
+    return TEMPLATE + `{{rolls=${dt.rolls}}} {{successes=${dt.successes}}} {{type=${dt.type}}} {{rage=${dt.rage}}} {{outcome=${dt.outcome}}} {{rageDice=${rageDice}}} {{normalDice=${normalDice}}}`
   }
 
   return {
