@@ -92,7 +92,7 @@ const WerewolfApo = (function () {
   }
 
   function criticalRoll(diceRolls) {
-    return 2 >= criticalCount(diceRolls)
+    return 1 <= criticalCount(diceRolls)
   }
 
   function criticalCount(rollResult) {
