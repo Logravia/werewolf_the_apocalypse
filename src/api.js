@@ -1,8 +1,29 @@
 const WerewolfApo = (function () {
+
+  function diceURLs(type) {
+    let baseDiceURL = {
+      normal: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/dice/dark_set/",
+      rage: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/dice/rage_set/"
+    }
+    let diceURLs = []
+
+    for (let i = 1; i <= 10; i++) {
+      diceURLs.push(`${baseDiceURL[type]}${i}.png`)
+    }
+
+    return diceURLs;
+  }
+
   // private variables and functions
   const DICE_TYPE = 10
   const ROLL_TYPES = {check: "check", harano: "harano", hauglosk: "hauglosk", willpower: "willpower", attribute: "attribute", "attributeAttribute": "attribute + attribute", attributeSkill: "attribute + skill", invalid: "invalid roll"}
-  const OUTCOMES = { failure: "failure", success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
+  const OUTCOMES = {success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
+  const RAGE_DICE = diceURLs("rage")
+  const DICE = diceURLs("normal")
+  const GRAPHICS = {success: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/success.png",
+                    totalFailure: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/failure.png",
+                    criticalHit: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/critical.png",
+                    brutalOutcome: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/brutal.png"}
   const TEMPLATE = '&{template:werewolf-roll} '
 
   function brutalOutcome(rollResult, rage) {
