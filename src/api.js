@@ -6,10 +6,9 @@ const WerewolfApo = (function () {
   const TEMPLATE = '&{template:werewolf-roll} '
 
   function brutalOutcome(rollResult, rage) {
-    // starting dice are considered rage dice in the pool
-    let rageDice = rollResult.slice(0, rage)
+    let dice = rageDice(rollResult, rage)
     // all dice 2 or below are brutal dice
-    let brutalResultCount = rageDice.filter(result => result <= 2).length
+    let brutalResultCount = dice.filter(result => result <= 2).length
     // if there are two or more brutal dice it's a brutal outcome
     return brutalResultCount >= 2
   }
@@ -65,6 +64,17 @@ const WerewolfApo = (function () {
     return 6 <= die
   }
 
+  // extracts rage dice
+  function rageDice(diceRolls, rage) {
+    // starting dice are considered rage dice in the pool
+    let dice = diceRolls.slice(0, rage)
+    return dice
+  }
+
+  function normalDice(diceRolls, rage) {
+    return diceRolls.slice(rage)
+  }
+
   function rollOutcome(diceRolls, rage) {
     let successes = successCount(diceRolls)
 
@@ -111,31 +121,45 @@ const WerewolfApo = (function () {
     return ROLL_TYPES.invalid;
   }
 
-  function rollMessage(diceRolls, rollOutcome, type, rage, successes) {
-    return TEMPLATE + `{{rollName=${type}}} {{dice=${diceRolls}}} {{outcome=${rollOutcome}}} {{rage=${rage}}} {{successes=${successes}}}`
+  function rollMessage(dt) {
+    return TEMPLATE + `{{rolls=${dt.rolls}}} {{successes=${dt.successes}}} {{type=${dt.type}}} {{rage=${dt.rage}}} {{outcome=${dt.outcome}}} {{rageDice=${dt.rageDiceResult}}} {{normalDice=${dt.normalDiceResult}}}`
   }
 
   return {
     // public
     roll: (msg) => {
-      let rolls = rollDice(dicePoolSize(msg))
-      let successes = successCount(rolls)
-      let type = rollType(msg)
-      let rage = rageAmount(msg.rolledByCharacterId)
-      let outcome = rollOutcome(rolls, rage)
+      const rolls = rollDice(dicePoolSize(msg));
+      const successes = successCount(rolls);
+      const type = rollType(msg);
+      const rage = rageAmount(msg.rolledByCharacterId);
+      const outcome = rollOutcome(rolls, rage);
+      const rageDiceResult = rageDice(rolls, rage);
+      const normalDiceResult = normalDice(rolls, rage);
 
-      let sender = `character|${msg.rolledByCharacterId}`
+      return {
+        rolls,
+        successes,
+        type,
+        outcome,
+        rageDiceResult,
+        normalDiceResult,
+      };
+    },
 
-      let message = rollMessage(rolls, outcome, type, rage, successes)
-
-      sendChat(sender, message)
+    // Send the chat message
+    sendRollMessage: (msg, rollData) => {
+      const sender = `character|${msg.rolledByCharacterId}`;
+      const message = rollMessage(rollData);
+      sendChat(sender, message);
     }
+
   }
 })();
 
 on('chat:message', msg => {
   if ('api' === msg.type && /^!rollWerewolf(\b\s|$)/i.test(msg.content)) {
-    WerewolfApo.roll(msg);
+    let rollData = WerewolfApo.roll(msg);
+    WerewolfApo.sendRollMessage(msg, rollData);
   }
 });
 
