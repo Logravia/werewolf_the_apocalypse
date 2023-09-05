@@ -25,6 +25,53 @@ const WerewolfApo = (function () {
                     brutalOutcome: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/brutal.png"}
   const TEMPLATE = '&{template:werewolf-roll} '
   const DICE_SIZE = {normal: 30, larger: 35, large: 40}
+  const POOL_NAMES = [
+  "strength",
+  "dexterity",
+  "stamina",
+  "charisma",
+  "manipulation",
+  "composure",
+  "intelligence",
+  "wits",
+  "resolve",
+  "health",
+  "willpower",
+  "athletics",
+  "brawl",
+  "craft",
+  "driving",
+  "firearms",
+  "larceny",
+  "melee",
+  "stealth",
+  "survival",
+  "animal ken",
+  "etiquette",
+  "insight",
+  "intimidation",
+  "leadership",
+  "performance",
+  "persuasion",
+  "streetwise",
+  "subterfuge",
+  "academics",
+  "awareness",
+  "finance",
+  "investigation",
+  "medicine",
+  "occult",
+  "politics",
+  "science",
+  "technology",
+  "glory",
+  "honor",
+  "wisdom",
+  "rage",
+  "harano",
+  "hauglosk"
+];
+
 
   function brutalOutcome(rollResult, rage) {
     let dice = rageDice(rollResult, rage)
@@ -41,17 +88,33 @@ const WerewolfApo = (function () {
   }
 
   // Extracts dicepool names from a chat call
-  function dicePoolNames(msg) {
+  function parseCommand(msg) {
+    let rollCmd = {pool1: "", pool2: "", modifier: 0, valid: false}
     let args = msg.content.split(' ')
 
-    // valid msg contains "!rollWerewolf dicepoolX [dicepoolY]"
-    if (args.length == 3) {
-      return [args[1], args[2]]
-    } else if (args.length == 2) {
-      return args[1];
-    } else {
-      return []
+    args.forEach(arg => {
+      if (validDicePool(arg)){
+        rollCmd.pool1 === "" ? rollCmd.pool1 = arg : rollCmd.pool2 = arg
+      }
+      if (parseInt(arg)){
+        rollCmd.modifier = parseInt(arg)
+      }
+      if(ritePoolstr(arg)) {
+        rollCmd.pool1 === "" ? rollCmd.pool1 = arg : rollCmd.pool2 = arg
+      }
     }
+    )
+    log(rollCmd)
+    return rollCmd
+  }
+
+  function validDicePool(name){
+    return POOL_NAMES.includes(name);
+  }
+
+  function ritePoolstr(str){
+    let re = /^rites_pool_\d+$/
+    return str.match(re);
   }
 
   function rollDice(count) {
@@ -66,10 +129,9 @@ const WerewolfApo = (function () {
 
   //returns total dice pool size
   function dicePoolSize(msg) {
-    let names = dicePoolNames(msg);
+    let cmd = parseCommand(msg);
     let charId = msg.rolledByCharacterId
-
-    let dicepool = [getAttrByName(charId, names[0]), getAttrByName(charId, names[1])]
+    let dicepool = [getAttrByName(charId, cmd.pool1), getAttrByName(charId, cmd.pool2), cmd.modifier]
 
     dicepool = dicepool.map(val=>parseInt(val));
     dicepool = dicepool.filter(val=>!isNaN(val))
@@ -124,7 +186,7 @@ const WerewolfApo = (function () {
   }
 
   function rollType(msg) {
-    let names  = dicePoolNames(msg)
+    let names  = parseCommand(msg)
 
     if (names.length === 1) {
       if (ROLL_TYPES[names[0]] !== undefined) {
