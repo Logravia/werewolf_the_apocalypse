@@ -50,7 +50,7 @@ hr.sheet-seperator
 // SKILLS
 h2.category-title Skills
 
-- const skills = {left: ["athletics", "brawl", "craft", "driving", "firearms", "larceny", "melee", "stealth", "survival"], mid: ["animal ken", "etiquette","insight", "intimidation","leadership","performance", "persuasion", "streetwise", "subterfuge"], right: ["academics", "awareness", "finance", "investigation", "medicine", "occult", "politics", "science", "technology"]}
+- const skills = {left: ["athletics", "brawl", "craft", "driving", "firearms", "larceny", "melee", "stealth", "survival"], mid: ["animal_ken", "etiquette","insight", "intimidation","leadership","performance", "persuasion", "streetwise", "subterfuge"], right: ["academics", "awareness", "finance", "investigation", "medicine", "occult", "politics", "science", "technology"]}
 div.skill-flexbox
   each list, label in skills
     div(class=label+'-list')
@@ -59,7 +59,7 @@ div.skill-flexbox
           div.skill-roll-wrapper
             p.skill #{skill}
             div.roll-btn-wrapper
-              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
+              button(type="roll" value=`!rollWerewolf ${skill} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
           +radio-button-set(skill, 5)
 
 hr.sheet-seperator

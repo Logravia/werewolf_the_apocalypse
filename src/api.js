@@ -46,7 +46,7 @@ const WerewolfApo = (function () {
   "melee",
   "stealth",
   "survival",
-  "animal ken",
+  "animal_ken",
   "etiquette",
   "insight",
   "intimidation",
@@ -89,6 +89,7 @@ const WerewolfApo = (function () {
 
   // Extracts dicepool names from a chat call
   function parseCommand(msg) {
+    log(msg)
     let rollCmd = {pool1: "", pool2: "", modifier: 0, valid: false}
     let args = msg.content.split(' ')
 
@@ -132,6 +133,7 @@ const WerewolfApo = (function () {
     let cmd = parseCommand(msg);
     let charId = msg.rolledByCharacterId
     let dicepool = [getAttrByName(charId, cmd.pool1), getAttrByName(charId, cmd.pool2), cmd.modifier]
+    log(dicepool)
 
     dicepool = dicepool.map(val=>parseInt(val));
     dicepool = dicepool.filter(val=>!isNaN(val))
