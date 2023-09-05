@@ -14,11 +14,11 @@ table.tenet-table
   tbody
     tr
       td
-        textarea.long-input
+        textarea.long-input(name="attr_tenets")
       td
-        textarea.long-input
+        textarea.long-input(name="attr_touchstones")
       td
-        textarea.long-input
+        textarea.long-input(name="attr_favors")
 
 // SPLIT
 div.left-right-container
@@ -119,10 +119,10 @@ div.left-right-container
     div.expierience-wrapper
       div.total-wrapper
         h3 Total Expierience
-        +spacer-dots
+        input.expierience-input(name="attr_total_xp" type="text")
       div.spent-wrapper
         h3 Spent Expierience
-        +spacer-dots
+        input.expierience-input(name="attr_spent_xp" type="text")
 
 include roll_template.pug
 

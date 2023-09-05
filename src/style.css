@@ -24,11 +24,13 @@
   src: url(https://fonts.gstatic.com/s/specialelite/v18/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2) format('woff2');
 }
 
+/* ROLL TEMPLATE */
+
 .sheet-rolltemplate-werewolf-roll {
     display: flex;
     justify-content: center;
     margin-right: 29px;
-    background-color: #7b5e5e;
+    background-color: #404040;
     padding: 2px;
     border-radius: 4px;
 }
@@ -70,6 +72,29 @@
 .sheet-rolltemplate-werewolf-roll .sheet-roll-title {
     font-size: 18px;
 }
+
+.sheet-rolltemplate-werewolf .sheet-success-title {
+    font-size: 20px;
+}
+
+/* BORDER */
+
+.sheetform {
+    background-color: #404040;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.charactersheet {
+    border: solid 2px #777370;
+    border-radius: 25px;
+    background: #f9f9f9;
+}
+
+.sheetform .charactersheet {
+    padding: 30px;
+}
+
 
 /* TITLE */
 .werewolf-title {
@@ -187,6 +212,10 @@
 }
 
 /* HEALTH, WILLPOWER, CRINOS */
+
+.crinos-stretch-box{
+    margin: 0 8%;
+}
 
 .crinos-container {
     width: 120px;
@@ -414,10 +443,12 @@ h3 {
 
 .appearance .floating-title, .history .floating-title {
     position: absolute;
-    top: -8%;
+    top: -6.5%;
     width: 100%;
     text-align: center;
 }
+
+
 /* GENERAL */
 .health-string {
     font-size: 14pt;
@@ -461,6 +492,18 @@ input:focus {
     flex-grow: 1;
 }
 
+.floating-title h3 {
+    width: fit-content;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+
+.floating-title {
+    display: flex;
+    justify-content: center;
+}
+
 /* NOTES */
 
 .notes {
@@ -476,7 +519,7 @@ input:focus {
 
 .notes .floating-title {
     position: absolute;
-    top: -6%;
+    top: -8%;
     width: 100%;
     text-align: center;
 }
@@ -499,6 +542,7 @@ input:focus {
 
 .total-wrapper, .spent-wrapper {
     display: flex;
+    gap: 20px
 }
 
 .spacer-dots {
@@ -509,6 +553,16 @@ input:focus {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.expierience-wrapper h3 {
+   margin: 0
+}
+
+.expierience-wrapper .expierience-input {
+    border-bottom: dotted;
+    max-width: 180px;
+    text-align: center;
 }
 
 
