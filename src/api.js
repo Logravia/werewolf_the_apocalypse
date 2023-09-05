@@ -24,6 +24,7 @@ const WerewolfApo = (function () {
                     criticalHit: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/critical.png",
                     brutalOutcome: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/brutal.png"}
   const TEMPLATE = '&{template:werewolf-roll} '
+  const DICE_SIZE = {normal: 30, larger: 35, large: 40}
 
   function brutalOutcome(rollResult, rage) {
     let dice = rageDice(rollResult, rage)
@@ -145,10 +146,9 @@ const WerewolfApo = (function () {
     let dice = DICE_URLS[type];
     let imgStr = ""
     roll.forEach((res,i)=>{
-      imgStr+=`<img src="${dice[res-1]}" alt="d10, ${i+1}" width="30px" height="30px"/>`
+      imgStr+=`<img src="${dice[res-1]}" alt="d10, ${i+1}" width="${DICE_SIZE.larger}" height="${DICE_SIZE.larger}"/>`
     })
 
-    log(imgStr)
     return imgStr
   }
 
