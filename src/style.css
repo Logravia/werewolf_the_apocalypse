@@ -313,6 +313,11 @@ h3 {
     font-weight: bold;
 }
 
+.gift-rite-table td.roll {
+    text-align: center; /* Center the content horizontally within the cell */
+    vertical-align: middle; /* Center the content vertically within the cell */
+}
+
 
 /* RAGE */
 .rage-value-wrapper {
