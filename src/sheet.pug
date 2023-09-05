@@ -68,13 +68,23 @@ h2.category-title Renown
 
 div.renown-container
   div.renown-value-wrapper
-    h3 Glory
+    div.text-roll-wrapper
+      h3.renown Glory
+      div.roll-btn-wrapper
+        button(type="roll" value=`!rollWerewolf glory ?{Modifier}`)
+    div.roll-btn-wrapper
     +radio-button-set("glory", 5)
   div.renown-value-wrapper
-    h3 Honor
+    div.text-roll-wrapper
+      h3.renown Honor
+      div.roll-btn-wrapper
+        button(type="roll" value=`!rollWerewolf honor ?{Modifier}`)
     +radio-button-set("honor", 5)
   div.renown-value-wrapper
-    h3 Wisdom
+    div.text-roll-wrapper
+      h3.renown Wisdom
+      div.roll-btn-wrapper
+        button(type="roll" value=`!rollWerewolf wisdom ?{Modifier}`)
     +radio-button-set("wisdom", 5)
 
 h2.category-title Gifts & Rites

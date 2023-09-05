@@ -212,11 +212,20 @@
     display:block;
 }
 
+.renown:hover + .roll-btn-wrapper {
+    display:block;
+}
+
 .roll-btn-wrapper:hover {
     display:block;
 }
 
 .skill-roll-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.text-roll-wrapper {
     display: flex;
     position: relative;
 }
