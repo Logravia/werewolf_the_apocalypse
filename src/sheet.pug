@@ -92,8 +92,8 @@ h2.category-title Gifts & Rites
 table.gift-rite-table
   tr
     th.table-name Name
-    th.table-pool Pool
-    th.table-cost Cost
+    th.table-pool Pool & Cost
+    th.table-cost Dice
     th.table-notes Notes
     th.table-roll Roll
   tr
@@ -102,13 +102,13 @@ table.gift-rite-table
         td
           input.table-input(type="text" name=`attr_rites_name_${i}`)
         td
-          input.table-input(type="text" name=`attr_rites_pool_${i}`)
+          input.table-input(type="text" name=`attr_rites_pool_cost${i}`)
         td
-          input.table-input(type="text" name=`attr_rites_cost_${i}`)
+          input.table-input(type="text" name=`attr_rites_dice_${i}`)
         td
           input.table-input(type="text" name=`attr_rites_notes_${i}`)
         td.roll
-          button(type="roll" value=`!rollWerewolf rites_pool_${i} ?{Modifier}`)
+          button(type="roll" value=`!rollWerewolf rites_dice_${i} ?{Modifier}`)
 
 div.rage-value-wrapper
   div.text-roll-wrapper
