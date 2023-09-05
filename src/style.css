@@ -24,17 +24,51 @@
   src: url(https://fonts.gstatic.com/s/specialelite/v18/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2) format('woff2');
 }
 
-.sheet-rolltemplate-werewolf-roll .sheet-werewolf-container {
-    width: 300px;
-    border: solid 1px;
-    background: white;
-    padding: 10px;
-    color: red;
+.sheet-rolltemplate-werewolf-roll {
+    display: flex;
+    justify-content: center;
+    margin-right: 29px;
+    background-color: #7b5e5e;
+    padding: 2px;
+    border-radius: 4px;
 }
 
-.sheet-dice-wrapper {
+.sheet-rolltemplate-werewolf-roll .sheet-werewolf-container {
+    width: 300px;
+    border: solid 2px #777370;
+    border-radius: 25px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+
+.sheet-rolltemplate-werewolf-roll .sheet-dice-wrapper {
     display: flex;
-    gap: 7px;
+    gap: 3px;
+    justify-content: center;
+    max-width: 180px;
+    flex-wrap: wrap;
+}
+
+.sheet-rolltemplate-werewolf-roll .sheet-flex-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.sheet-rolltemplate-werewolf-roll h3  {
+    font-family: "Special Elite", cursive;
+    font-size: 18px;
+    text-align: center;
+}
+
+.sheet-rolltemplate-werewolf-roll .sheet-seperator {
+  border-top: 3px solid #6c5c5c;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  border-radius: 45%;
+}
+
+.sheet-rolltemplate-werewolf-roll .sheet-roll-title {
+    font-size: 18px;
 }
 
 /* TITLE */

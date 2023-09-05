@@ -1,8 +1,13 @@
 rolltemplate.sheet-rolltemplate-werewolf-roll
-  .sheet-template-container
-    h2 Rolls: {{rolls}}
-    h2 Successes: {{successes}}
-    h2 Type: {{type}}
-    h2 Outcome: {{outcome}}
-    h2 Rage dice: {{rageDice}}
-    h3 Normal dice: {{normalDice}}
+  .sheet-werewolf-container
+      h3.sheet-roll-title {{type}}
+      hr.sheet-seperator
+      h3 Normal dice
+      div.sheet-flex-wrapper
+          div.sheet-dice-wrapper {{normalDice}}
+      hr.sheet-seperator
+      h3 Rage dice
+      div.sheet-flex-wrapper
+          div.sheet-dice-wrapper {{rageDice}}
+      hr.sheet-seperator
+      h3 Successes: {{successes}}
