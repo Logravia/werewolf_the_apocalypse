@@ -544,18 +544,18 @@ input:focus {
 
 .notes {
     position: relative;
-    height: 200px
+    height: 280px
 }
 
 .notes-wrapper {
-    height: 200px;
+    height: 300px;
     display: flex;
     flex-direction: column;
 }
 
 .notes .floating-title {
     position: absolute;
-    top: -8%;
+    top: -6%;
     width: 100%;
     text-align: center;
 }
