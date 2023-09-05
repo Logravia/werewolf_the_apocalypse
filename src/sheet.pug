@@ -56,7 +56,10 @@ div.skill-flexbox
     div(class=label+'-list')
       each skill in list
         div.skill-value-wrapper
-          p.skill #{skill}
+          div.skill-roll-wrapper
+            p.skill #{skill}
+            div.roll-btn-wrapper
+              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
           +radio-button-set(skill, 5)
 
 hr.sheet-seperator
