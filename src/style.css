@@ -223,6 +223,13 @@
     display:block;
 }
 
+.rollable-text:hover + .roll-btn-wrapper {
+    display:block;
+}
+
+.text-roll-wrapper {
+    width: fit-content;
+}
 
 
 .skill-roll-wrapper {

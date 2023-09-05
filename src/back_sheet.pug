@@ -41,10 +41,16 @@ div.left-right-container
 
     div.harano-hauglosk-wrapper
       div.harano-wrapper
-        h4 Harano
+        div.text-roll-wrapper
+          h3.rollable-text Hauglosk
+          div.roll-btn-wrapper
+            button(type="roll" value=`!rollWerewolf hauglosk`)
         +radio-button-set("hauglosk", 5)
       div.hauglosk-wrapper
-        h4 Hauglosk
+        div.text-roll-wrapper
+          h3.rollable-text Harano
+          div.roll-btn-wrapper
+            button(type="roll" value=`!rollWerewolf harano`)
         +radio-button-set("harano", 5)
 
     div.appearance-history-wrapper
