@@ -108,10 +108,13 @@ table.gift-rite-table
         td
           input.table-input(type="text" name=`attr_rites_notes_${i}`)
         td.roll
-          button(type="roll" value=`!rollWerewolf rites_pool ?{Modifier}`)
+          button(type="roll" value=`!rollWerewolf rites_pool_${i} ?{Modifier}`)
 
 div.rage-value-wrapper
-  h3 Rage
+  div.text-roll-wrapper
+    h3.rage Rage
+    div.roll-btn-wrapper
+      button(type="roll" value=`!rollWerewolf 1`)
   +radio-button-set("rage", 5)
 
 include back_sheet.pug

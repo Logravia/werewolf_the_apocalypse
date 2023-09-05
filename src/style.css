@@ -207,6 +207,9 @@
     display:block;
 }
 
+.rage:hover + .roll-btn-wrapper {
+    display:block;
+}
 
 .skill:hover + .roll-btn-wrapper {
     display:block;
@@ -219,6 +222,8 @@
 .roll-btn-wrapper:hover {
     display:block;
 }
+
+
 
 .skill-roll-wrapper {
     display: flex;
