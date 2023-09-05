@@ -28,7 +28,7 @@ div.list-container
           div.name-roll-button-wrapper
             p.attribute #{attr}
             div.roll-btn-wrapper
-              button Roll
+              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
           +radio-button-set(attr, 5)
     div.centering-border
 
