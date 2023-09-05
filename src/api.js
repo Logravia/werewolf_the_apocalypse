@@ -100,7 +100,7 @@ const WerewolfApo = (function () {
       if (parseInt(arg)){
         rollCmd.modifier = parseInt(arg)
       }
-      if(ritePoolstr(arg)) {
+      if(riteDicestr(arg)) {
         rollCmd.pool1 === "" ? rollCmd.pool1 = arg : rollCmd.pool2 = arg
       }
     }
@@ -113,8 +113,8 @@ const WerewolfApo = (function () {
     return POOL_NAMES.includes(name);
   }
 
-  function ritePoolstr(str){
-    let re = /^rites_pool_\d+$/
+  function riteDicestr(str){
+    let re = /^rites_dice_\d+$/
     return str.match(re);
   }
 
