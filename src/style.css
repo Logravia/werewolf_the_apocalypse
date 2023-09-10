@@ -707,12 +707,5 @@ input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
 
 /* Styles unique to fake dot (checked or left of checked) */
 input.remove-value-radio + span::before {
-    content: "x";
-    background-color: #fff;
-    color: #2c2424a6;
-    font-family: "Cutive";
-    margin-right: 14px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
+    display: none;
 }
