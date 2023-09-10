@@ -697,11 +697,6 @@ input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
     display: none;
 }
 
-.remove-value-radio + span{
-    display: none;
-}
-/*CLEAR BUTTON*/
-
 .radio-button-set-wrapper:hover .remove-value-radio {
     display: inline-block;
 }
@@ -711,14 +706,13 @@ input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
 }
 
 /* Styles unique to fake dot (checked or left of checked) */
-input.remove-value-radio + span::before
-{
+input.remove-value-radio + span::before {
     content: "x";
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: #3c3737;
-    color: white;
-    font-family: "Special Elite", cursive;
-    margin-left: 4px;
+    background-color: #fff;
+    color: #2c2424a6;
+    font-family: "Cutive";
+    margin-right: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
 }
