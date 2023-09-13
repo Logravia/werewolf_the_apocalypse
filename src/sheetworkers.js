@@ -14,7 +14,6 @@ const SKILLS = [
   'politics',     'science',
   'technology'
 ]
-
 const ATTRS = [
   'strength',
   'dexterity',
@@ -26,6 +25,7 @@ const ATTRS = [
   'wits',
   'resolve'
 ]
+const OTHER_ATTRS = ["glory", "wisdom", "honor", "rage", "hauglosk", "harano"]
 
 function applyStyleToDotButtonSet(name, value) {
   let dotOne = $20(`.${name}[value='1']`)
@@ -51,13 +51,11 @@ function doubleResetClick(hist, curAttr, curVal) {
 }
 
 function restoreDotStyling(){
-  restoreSkillAttributeStyling();
+  restoreAttributeStyling(SKILLS.concat(ATTRS).concat(OTHER_ATTRS));
 }
 
-function restoreSkillAttributeStyling(){
-  let skillsAttrs = SKILLS.concat(ATTRS)
-
-  getAttrs(skillsAttrs, (names_values)=> {
+function restoreAttributeStyling(arr){
+  getAttrs(arr, (names_values)=> {
     let keys = Object.keys(names_values);
     keys.forEach(key=>{
       applyStyleToDotButtonSet(key, names_values[key])
