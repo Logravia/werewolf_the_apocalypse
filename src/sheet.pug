@@ -3,6 +3,7 @@ include hidden_attributes.pug
 // TITLE
 
 h1.werewolf-title Werewolf
+button(type="action" name="act_test" id="specialButton") ACTION
 
 // DESCRIPTION TABLE
 - const character_descriptors = ["name", "concept", "patron", "chronicle", "auspice", "tribe"]
@@ -29,7 +30,7 @@ div.list-container
             p.attribute #{attr}
             div.roll-btn-wrapper
               button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
-          +radio-button-set(attr, 5)
+          +button-set(attr, 5)
     div.centering-border
 
 div.health-will-crinos
@@ -60,7 +61,7 @@ div.skill-flexbox
             p.skill #{skill}
             div.roll-btn-wrapper
               button(type="roll" value=`!rollWerewolf ${skill} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
-          +radio-button-set(skill, 5)
+          +button-set(skill, 5)
 
 hr.sheet-seperator
 
@@ -73,19 +74,19 @@ div.renown-container
       div.roll-btn-wrapper
         button(type="roll" value=`!rollWerewolf glory ?{Modifier}`)
     div.roll-btn-wrapper
-    +radio-button-set("glory", 5)
+    +button-set("glory", 5)
   div.renown-value-wrapper
     div.text-roll-wrapper
       h3.renown Honor
       div.roll-btn-wrapper
         button(type="roll" value=`!rollWerewolf honor ?{Modifier}`)
-    +radio-button-set("honor", 5)
+    +button-set("honor", 5)
   div.renown-value-wrapper
     div.text-roll-wrapper
       h3.renown Wisdom
       div.roll-btn-wrapper
         button(type="roll" value=`!rollWerewolf wisdom ?{Modifier}`)
-    +radio-button-set("wisdom", 5)
+    +button-set("wisdom", 5)
 
 h2.category-title Gifts & Rites
 
@@ -115,6 +116,6 @@ div.rage-value-wrapper
     h3.rage Rage
     div.roll-btn-wrapper
       button(type="roll" value=`!rollWerewolf 1`)
-  +radio-button-set("rage", 5)
+  +button-set("rage", 5)
 
 include back_sheet.pug

@@ -36,7 +36,7 @@ div.left-right-container
             td
               input.table-input(type='text' name='attr_advantage_flaw'+i)
             td
-              +radio-button-set("advantage_flaw_value"+i, 5)
+              +button-set("advantage_flaw_value"+i, 5)
 
 
     div.harano-hauglosk-wrapper
@@ -45,13 +45,13 @@ div.left-right-container
           h3.rollable-text Hauglosk
           div.roll-btn-wrapper
             button(type="roll" value=`!rollWerewolf harano hauglosk`)
-        +radio-button-set("hauglosk", 5)
+        +button-set("hauglosk", 5)
       div.hauglosk-wrapper
         div.text-roll-wrapper
           h3.rollable-text Harano
           div.roll-btn-wrapper
             button(type="roll" value=`!rollWerewolf harano hauglosk`)
-        +radio-button-set("harano", 5)
+        +button-set("harano", 5)
 
     div.appearance-history-wrapper
       div.appearance
@@ -133,4 +133,4 @@ div.left-right-container
 include roll_template.pug
 
 script(type="text/worker")
-  include index.js
+  include sheetworkers.js
