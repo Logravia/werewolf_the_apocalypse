@@ -607,6 +607,7 @@ input:focus {
 
 .checkbox-set-wrapper {
     display: flex;
+    gap: 4px;
 }
 
 input.sheet-defaultCheckbox[type="checkbox"] {
@@ -644,68 +645,23 @@ input[type=checkbox]:checked + .fake-checkbox {
   color: #fff;
 }
 
-/* Hide actual dot/checkbox */
-input.sheet-defaultRadioBox
-{
-    position: absolute;
-    opacity: 0;
-    width: 19px;
-    height: 22px;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-}
-
-/* Styles common to fake dot and checkbox */
-input.sheet-defaultRadioBox + span::before
-{
-    border: solid 2px #3c3737;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+.button-set-wrapper {
+    display: flex;
+    gap: 4px;
 }
 
 /* Styles unique to fake dot (checked or left of checked) */
-input.sheet-defaultRadioBox + span::before
+.dot-value-button
 {
     content: "";
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #3c3737;
+    border: solid 2px #3c3737;
+    backgroud-color: white;
+    padding: 0;
 }
 
-/* Styles unique to fake checkbox (unchecked) */
-input.sheet-defaultCheckBox + span::before
-{
-    position: relative;
-    content: "";
-    width: 14px;
-    height: 14px;
-    font-size: 12px;
-    border-radius: 3px;
-}
-
-/* Remove dot from all radios _after_ selected one */
-input.sheet-defaultRadioBox:checked ~ input.sheet-defaultRadioBox + span::before
-{
-    background-color: white;
-}
-
-.remove-value-radio{
-    display: none;
-}
-
-.radio-button-set-wrapper:hover .remove-value-radio {
-    display: inline-block;
-}
-
-.radio-button-set-wrapper:hover .remove-value-radio + span {
-    display: inline-block;
-}
-
-/* Styles unique to fake dot (checked or left of checked) */
-input.remove-value-radio + span::before {
-    display: none;
+.selected {
+    background: #3c3737;
 }
