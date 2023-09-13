@@ -1,5 +1,6 @@
-<input type="hidden" name="attr_health_mod" value="0"><!-- TITLE-->
-<h1 class="werewolf-title">Werewolf</h1><!-- DESCRIPTION TABLE-->
+<input type="hidden" name="attr_click_history" value="0"><!-- TITLE-->
+<h1 class="werewolf-title">Werewolf</h1><button type="action" name="act_test"
+  id="specialButton">ACTION</button><!-- DESCRIPTION TABLE-->
 <div class="description-grid-wrapper">
   <div class="description-grid">
     <div class="label-input-wrapper"><label class="char-desc-label">name:</label><input class="description-input"
@@ -28,14 +29,12 @@
             value="!rollWerewolf strength ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_strength" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_strength" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_strength" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_strength"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_strength" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_strength" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button strength" name="act_strength" value="1"
+          data-name="strength"></button><button class="dot-value-button strength" name="act_strength" value="2"
+          data-name="strength"></button><button class="dot-value-button strength" name="act_strength" value="3"
+          data-name="strength"></button><button class="dot-value-button strength" name="act_strength" value="4"
+          data-name="strength"></button><button class="dot-value-button strength" name="act_strength" value="5"
+          data-name="strength"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -44,14 +43,12 @@
             value="!rollWerewolf dexterity ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_dexterity" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_dexterity" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_dexterity" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_dexterity"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_dexterity" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_dexterity" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button dexterity" name="act_dexterity" value="1"
+          data-name="dexterity"></button><button class="dot-value-button dexterity" name="act_dexterity" value="2"
+          data-name="dexterity"></button><button class="dot-value-button dexterity" name="act_dexterity" value="3"
+          data-name="dexterity"></button><button class="dot-value-button dexterity" name="act_dexterity" value="4"
+          data-name="dexterity"></button><button class="dot-value-button dexterity" name="act_dexterity" value="5"
+          data-name="dexterity"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -60,14 +57,12 @@
             value="!rollWerewolf stamina ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_stamina" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_stamina" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_stamina" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_stamina"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_stamina" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_stamina" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button stamina" name="act_stamina" value="1"
+          data-name="stamina"></button><button class="dot-value-button stamina" name="act_stamina" value="2"
+          data-name="stamina"></button><button class="dot-value-button stamina" name="act_stamina" value="3"
+          data-name="stamina"></button><button class="dot-value-button stamina" name="act_stamina" value="4"
+          data-name="stamina"></button><button class="dot-value-button stamina" name="act_stamina" value="5"
+          data-name="stamina"></button></div>
     </div>
   </div>
   <div class="centering-border"></div>
@@ -80,14 +75,12 @@
             value="!rollWerewolf charisma ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_charisma" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_charisma" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_charisma" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_charisma"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_charisma" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_charisma" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button charisma" name="act_charisma" value="1"
+          data-name="charisma"></button><button class="dot-value-button charisma" name="act_charisma" value="2"
+          data-name="charisma"></button><button class="dot-value-button charisma" name="act_charisma" value="3"
+          data-name="charisma"></button><button class="dot-value-button charisma" name="act_charisma" value="4"
+          data-name="charisma"></button><button class="dot-value-button charisma" name="act_charisma" value="5"
+          data-name="charisma"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -96,14 +89,13 @@
             value="!rollWerewolf manipulation ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_manipulation" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_manipulation" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_manipulation" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_manipulation"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_manipulation" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_manipulation" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button manipulation" name="act_manipulation" value="1"
+          data-name="manipulation"></button><button class="dot-value-button manipulation" name="act_manipulation"
+          value="2" data-name="manipulation"></button><button class="dot-value-button manipulation"
+          name="act_manipulation" value="3" data-name="manipulation"></button><button
+          class="dot-value-button manipulation" name="act_manipulation" value="4"
+          data-name="manipulation"></button><button class="dot-value-button manipulation" name="act_manipulation"
+          value="5" data-name="manipulation"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -112,14 +104,12 @@
             value="!rollWerewolf composure ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_composure" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_composure" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_composure" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_composure"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_composure" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_composure" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button composure" name="act_composure" value="1"
+          data-name="composure"></button><button class="dot-value-button composure" name="act_composure" value="2"
+          data-name="composure"></button><button class="dot-value-button composure" name="act_composure" value="3"
+          data-name="composure"></button><button class="dot-value-button composure" name="act_composure" value="4"
+          data-name="composure"></button><button class="dot-value-button composure" name="act_composure" value="5"
+          data-name="composure"></button></div>
     </div>
   </div>
   <div class="centering-border"></div>
@@ -132,14 +122,13 @@
             value="!rollWerewolf intelligence ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_intelligence" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_intelligence" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_intelligence" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_intelligence"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_intelligence" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_intelligence" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button intelligence" name="act_intelligence" value="1"
+          data-name="intelligence"></button><button class="dot-value-button intelligence" name="act_intelligence"
+          value="2" data-name="intelligence"></button><button class="dot-value-button intelligence"
+          name="act_intelligence" value="3" data-name="intelligence"></button><button
+          class="dot-value-button intelligence" name="act_intelligence" value="4"
+          data-name="intelligence"></button><button class="dot-value-button intelligence" name="act_intelligence"
+          value="5" data-name="intelligence"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -148,13 +137,12 @@
             value="!rollWerewolf wits ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_wits" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_wits" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_wits" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_wits" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_wits" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_wits" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button wits" name="act_wits" value="1"
+          data-name="wits"></button><button class="dot-value-button wits" name="act_wits" value="2"
+          data-name="wits"></button><button class="dot-value-button wits" name="act_wits" value="3"
+          data-name="wits"></button><button class="dot-value-button wits" name="act_wits" value="4"
+          data-name="wits"></button><button class="dot-value-button wits" name="act_wits" value="5"
+          data-name="wits"></button></div>
     </div>
     <div class="name-value-wrapper">
       <div class="name-roll-button-wrapper">
@@ -163,14 +151,12 @@
             value="!rollWerewolf resolve ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_resolve" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_resolve" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_resolve" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_resolve"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_resolve" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_resolve" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button resolve" name="act_resolve" value="1"
+          data-name="resolve"></button><button class="dot-value-button resolve" name="act_resolve" value="2"
+          data-name="resolve"></button><button class="dot-value-button resolve" name="act_resolve" value="3"
+          data-name="resolve"></button><button class="dot-value-button resolve" name="act_resolve" value="4"
+          data-name="resolve"></button><button class="dot-value-button resolve" name="act_resolve" value="5"
+          data-name="resolve"></button></div>
     </div>
   </div>
   <div class="centering-border"></div>
@@ -239,14 +225,12 @@
             value="!rollWerewolf athletics ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_athletics" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_athletics" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_athletics" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_athletics"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_athletics" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_athletics" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button athletics" name="act_athletics" value="1"
+          data-name="athletics"></button><button class="dot-value-button athletics" name="act_athletics" value="2"
+          data-name="athletics"></button><button class="dot-value-button athletics" name="act_athletics" value="3"
+          data-name="athletics"></button><button class="dot-value-button athletics" name="act_athletics" value="4"
+          data-name="athletics"></button><button class="dot-value-button athletics" name="act_athletics" value="5"
+          data-name="athletics"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -255,13 +239,12 @@
             value="!rollWerewolf brawl ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_brawl" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_brawl" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_brawl" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_brawl" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_brawl" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_brawl" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button brawl" name="act_brawl" value="1"
+          data-name="brawl"></button><button class="dot-value-button brawl" name="act_brawl" value="2"
+          data-name="brawl"></button><button class="dot-value-button brawl" name="act_brawl" value="3"
+          data-name="brawl"></button><button class="dot-value-button brawl" name="act_brawl" value="4"
+          data-name="brawl"></button><button class="dot-value-button brawl" name="act_brawl" value="5"
+          data-name="brawl"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -270,13 +253,12 @@
             value="!rollWerewolf craft ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_craft" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_craft" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_craft" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_craft" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_craft" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_craft" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button craft" name="act_craft" value="1"
+          data-name="craft"></button><button class="dot-value-button craft" name="act_craft" value="2"
+          data-name="craft"></button><button class="dot-value-button craft" name="act_craft" value="3"
+          data-name="craft"></button><button class="dot-value-button craft" name="act_craft" value="4"
+          data-name="craft"></button><button class="dot-value-button craft" name="act_craft" value="5"
+          data-name="craft"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -285,14 +267,12 @@
             value="!rollWerewolf driving ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_driving" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_driving" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_driving" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_driving"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_driving" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_driving" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button driving" name="act_driving" value="1"
+          data-name="driving"></button><button class="dot-value-button driving" name="act_driving" value="2"
+          data-name="driving"></button><button class="dot-value-button driving" name="act_driving" value="3"
+          data-name="driving"></button><button class="dot-value-button driving" name="act_driving" value="4"
+          data-name="driving"></button><button class="dot-value-button driving" name="act_driving" value="5"
+          data-name="driving"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -301,14 +281,12 @@
             value="!rollWerewolf firearms ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_firearms" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_firearms" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_firearms" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_firearms"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_firearms" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_firearms" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button firearms" name="act_firearms" value="1"
+          data-name="firearms"></button><button class="dot-value-button firearms" name="act_firearms" value="2"
+          data-name="firearms"></button><button class="dot-value-button firearms" name="act_firearms" value="3"
+          data-name="firearms"></button><button class="dot-value-button firearms" name="act_firearms" value="4"
+          data-name="firearms"></button><button class="dot-value-button firearms" name="act_firearms" value="5"
+          data-name="firearms"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -317,14 +295,12 @@
             value="!rollWerewolf larceny ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_larceny" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_larceny" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_larceny" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_larceny"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_larceny" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_larceny" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button larceny" name="act_larceny" value="1"
+          data-name="larceny"></button><button class="dot-value-button larceny" name="act_larceny" value="2"
+          data-name="larceny"></button><button class="dot-value-button larceny" name="act_larceny" value="3"
+          data-name="larceny"></button><button class="dot-value-button larceny" name="act_larceny" value="4"
+          data-name="larceny"></button><button class="dot-value-button larceny" name="act_larceny" value="5"
+          data-name="larceny"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -333,13 +309,12 @@
             value="!rollWerewolf melee ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_melee" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_melee" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_melee" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_melee" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_melee" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_melee" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button melee" name="act_melee" value="1"
+          data-name="melee"></button><button class="dot-value-button melee" name="act_melee" value="2"
+          data-name="melee"></button><button class="dot-value-button melee" name="act_melee" value="3"
+          data-name="melee"></button><button class="dot-value-button melee" name="act_melee" value="4"
+          data-name="melee"></button><button class="dot-value-button melee" name="act_melee" value="5"
+          data-name="melee"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -348,14 +323,12 @@
             value="!rollWerewolf stealth ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_stealth" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_stealth" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_stealth" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_stealth"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_stealth" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_stealth" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button stealth" name="act_stealth" value="1"
+          data-name="stealth"></button><button class="dot-value-button stealth" name="act_stealth" value="2"
+          data-name="stealth"></button><button class="dot-value-button stealth" name="act_stealth" value="3"
+          data-name="stealth"></button><button class="dot-value-button stealth" name="act_stealth" value="4"
+          data-name="stealth"></button><button class="dot-value-button stealth" name="act_stealth" value="5"
+          data-name="stealth"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -364,14 +337,12 @@
             value="!rollWerewolf survival ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_survival" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_survival" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_survival" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_survival"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_survival" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_survival" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button survival" name="act_survival" value="1"
+          data-name="survival"></button><button class="dot-value-button survival" name="act_survival" value="2"
+          data-name="survival"></button><button class="dot-value-button survival" name="act_survival" value="3"
+          data-name="survival"></button><button class="dot-value-button survival" name="act_survival" value="4"
+          data-name="survival"></button><button class="dot-value-button survival" name="act_survival" value="5"
+          data-name="survival"></button></div>
     </div>
   </div>
   <div class="mid-list">
@@ -382,14 +353,12 @@
             value="!rollWerewolf animal_ken ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_animal_ken" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_animal_ken" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_animal_ken" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_animal_ken"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_animal_ken" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_animal_ken" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button animal_ken" name="act_animal_ken" value="1"
+          data-name="animal_ken"></button><button class="dot-value-button animal_ken" name="act_animal_ken" value="2"
+          data-name="animal_ken"></button><button class="dot-value-button animal_ken" name="act_animal_ken" value="3"
+          data-name="animal_ken"></button><button class="dot-value-button animal_ken" name="act_animal_ken" value="4"
+          data-name="animal_ken"></button><button class="dot-value-button animal_ken" name="act_animal_ken" value="5"
+          data-name="animal_ken"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -398,14 +367,12 @@
             value="!rollWerewolf etiquette ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_etiquette" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_etiquette" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_etiquette" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_etiquette"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_etiquette" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_etiquette" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button etiquette" name="act_etiquette" value="1"
+          data-name="etiquette"></button><button class="dot-value-button etiquette" name="act_etiquette" value="2"
+          data-name="etiquette"></button><button class="dot-value-button etiquette" name="act_etiquette" value="3"
+          data-name="etiquette"></button><button class="dot-value-button etiquette" name="act_etiquette" value="4"
+          data-name="etiquette"></button><button class="dot-value-button etiquette" name="act_etiquette" value="5"
+          data-name="etiquette"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -414,14 +381,12 @@
             value="!rollWerewolf insight ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_insight" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_insight" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_insight" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_insight"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_insight" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_insight" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button insight" name="act_insight" value="1"
+          data-name="insight"></button><button class="dot-value-button insight" name="act_insight" value="2"
+          data-name="insight"></button><button class="dot-value-button insight" name="act_insight" value="3"
+          data-name="insight"></button><button class="dot-value-button insight" name="act_insight" value="4"
+          data-name="insight"></button><button class="dot-value-button insight" name="act_insight" value="5"
+          data-name="insight"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -430,14 +395,13 @@
             value="!rollWerewolf intimidation ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_intimidation" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_intimidation" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_intimidation" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_intimidation"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_intimidation" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_intimidation" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button intimidation" name="act_intimidation" value="1"
+          data-name="intimidation"></button><button class="dot-value-button intimidation" name="act_intimidation"
+          value="2" data-name="intimidation"></button><button class="dot-value-button intimidation"
+          name="act_intimidation" value="3" data-name="intimidation"></button><button
+          class="dot-value-button intimidation" name="act_intimidation" value="4"
+          data-name="intimidation"></button><button class="dot-value-button intimidation" name="act_intimidation"
+          value="5" data-name="intimidation"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -446,14 +410,12 @@
             value="!rollWerewolf leadership ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_leadership" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_leadership" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_leadership" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_leadership"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_leadership" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_leadership" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button leadership" name="act_leadership" value="1"
+          data-name="leadership"></button><button class="dot-value-button leadership" name="act_leadership" value="2"
+          data-name="leadership"></button><button class="dot-value-button leadership" name="act_leadership" value="3"
+          data-name="leadership"></button><button class="dot-value-button leadership" name="act_leadership" value="4"
+          data-name="leadership"></button><button class="dot-value-button leadership" name="act_leadership" value="5"
+          data-name="leadership"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -462,14 +424,12 @@
             value="!rollWerewolf performance ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_performance" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_performance" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_performance" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_performance"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_performance" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_performance" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button performance" name="act_performance" value="1"
+          data-name="performance"></button><button class="dot-value-button performance" name="act_performance" value="2"
+          data-name="performance"></button><button class="dot-value-button performance" name="act_performance" value="3"
+          data-name="performance"></button><button class="dot-value-button performance" name="act_performance" value="4"
+          data-name="performance"></button><button class="dot-value-button performance" name="act_performance" value="5"
+          data-name="performance"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -478,14 +438,12 @@
             value="!rollWerewolf persuasion ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_persuasion" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_persuasion" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_persuasion" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_persuasion"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_persuasion" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_persuasion" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button persuasion" name="act_persuasion" value="1"
+          data-name="persuasion"></button><button class="dot-value-button persuasion" name="act_persuasion" value="2"
+          data-name="persuasion"></button><button class="dot-value-button persuasion" name="act_persuasion" value="3"
+          data-name="persuasion"></button><button class="dot-value-button persuasion" name="act_persuasion" value="4"
+          data-name="persuasion"></button><button class="dot-value-button persuasion" name="act_persuasion" value="5"
+          data-name="persuasion"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -494,14 +452,12 @@
             value="!rollWerewolf streetwise ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_streetwise" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_streetwise" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_streetwise" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_streetwise"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_streetwise" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_streetwise" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button streetwise" name="act_streetwise" value="1"
+          data-name="streetwise"></button><button class="dot-value-button streetwise" name="act_streetwise" value="2"
+          data-name="streetwise"></button><button class="dot-value-button streetwise" name="act_streetwise" value="3"
+          data-name="streetwise"></button><button class="dot-value-button streetwise" name="act_streetwise" value="4"
+          data-name="streetwise"></button><button class="dot-value-button streetwise" name="act_streetwise" value="5"
+          data-name="streetwise"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -510,14 +466,12 @@
             value="!rollWerewolf subterfuge ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_subterfuge" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_subterfuge" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_subterfuge" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_subterfuge"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_subterfuge" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_subterfuge" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button subterfuge" name="act_subterfuge" value="1"
+          data-name="subterfuge"></button><button class="dot-value-button subterfuge" name="act_subterfuge" value="2"
+          data-name="subterfuge"></button><button class="dot-value-button subterfuge" name="act_subterfuge" value="3"
+          data-name="subterfuge"></button><button class="dot-value-button subterfuge" name="act_subterfuge" value="4"
+          data-name="subterfuge"></button><button class="dot-value-button subterfuge" name="act_subterfuge" value="5"
+          data-name="subterfuge"></button></div>
     </div>
   </div>
   <div class="right-list">
@@ -528,14 +482,12 @@
             value="!rollWerewolf academics ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_academics" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_academics" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_academics" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_academics"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_academics" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_academics" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button academics" name="act_academics" value="1"
+          data-name="academics"></button><button class="dot-value-button academics" name="act_academics" value="2"
+          data-name="academics"></button><button class="dot-value-button academics" name="act_academics" value="3"
+          data-name="academics"></button><button class="dot-value-button academics" name="act_academics" value="4"
+          data-name="academics"></button><button class="dot-value-button academics" name="act_academics" value="5"
+          data-name="academics"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -544,14 +496,12 @@
             value="!rollWerewolf awareness ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_awareness" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_awareness" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_awareness" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_awareness"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_awareness" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_awareness" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button awareness" name="act_awareness" value="1"
+          data-name="awareness"></button><button class="dot-value-button awareness" name="act_awareness" value="2"
+          data-name="awareness"></button><button class="dot-value-button awareness" name="act_awareness" value="3"
+          data-name="awareness"></button><button class="dot-value-button awareness" name="act_awareness" value="4"
+          data-name="awareness"></button><button class="dot-value-button awareness" name="act_awareness" value="5"
+          data-name="awareness"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -560,14 +510,12 @@
             value="!rollWerewolf finance ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_finance" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_finance" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_finance" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_finance"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_finance" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_finance" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button finance" name="act_finance" value="1"
+          data-name="finance"></button><button class="dot-value-button finance" name="act_finance" value="2"
+          data-name="finance"></button><button class="dot-value-button finance" name="act_finance" value="3"
+          data-name="finance"></button><button class="dot-value-button finance" name="act_finance" value="4"
+          data-name="finance"></button><button class="dot-value-button finance" name="act_finance" value="5"
+          data-name="finance"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -576,14 +524,13 @@
             value="!rollWerewolf investigation ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_investigation" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_investigation" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_investigation" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_investigation"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_investigation" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_investigation" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button investigation" name="act_investigation" value="1"
+          data-name="investigation"></button><button class="dot-value-button investigation" name="act_investigation"
+          value="2" data-name="investigation"></button><button class="dot-value-button investigation"
+          name="act_investigation" value="3" data-name="investigation"></button><button
+          class="dot-value-button investigation" name="act_investigation" value="4"
+          data-name="investigation"></button><button class="dot-value-button investigation" name="act_investigation"
+          value="5" data-name="investigation"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -592,14 +539,12 @@
             value="!rollWerewolf medicine ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_medicine" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_medicine" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_medicine" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_medicine"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_medicine" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_medicine" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button medicine" name="act_medicine" value="1"
+          data-name="medicine"></button><button class="dot-value-button medicine" name="act_medicine" value="2"
+          data-name="medicine"></button><button class="dot-value-button medicine" name="act_medicine" value="3"
+          data-name="medicine"></button><button class="dot-value-button medicine" name="act_medicine" value="4"
+          data-name="medicine"></button><button class="dot-value-button medicine" name="act_medicine" value="5"
+          data-name="medicine"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -608,13 +553,12 @@
             value="!rollWerewolf occult ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_occult" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_occult" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_occult" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_occult" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_occult" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_occult" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button occult" name="act_occult" value="1"
+          data-name="occult"></button><button class="dot-value-button occult" name="act_occult" value="2"
+          data-name="occult"></button><button class="dot-value-button occult" name="act_occult" value="3"
+          data-name="occult"></button><button class="dot-value-button occult" name="act_occult" value="4"
+          data-name="occult"></button><button class="dot-value-button occult" name="act_occult" value="5"
+          data-name="occult"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -623,14 +567,12 @@
             value="!rollWerewolf politics ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_politics" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_politics" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_politics" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_politics"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_politics" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_politics" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button politics" name="act_politics" value="1"
+          data-name="politics"></button><button class="dot-value-button politics" name="act_politics" value="2"
+          data-name="politics"></button><button class="dot-value-button politics" name="act_politics" value="3"
+          data-name="politics"></button><button class="dot-value-button politics" name="act_politics" value="4"
+          data-name="politics"></button><button class="dot-value-button politics" name="act_politics" value="5"
+          data-name="politics"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -639,14 +581,12 @@
             value="!rollWerewolf science ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_science" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_science" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_science" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_science"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_science" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_science" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button science" name="act_science" value="1"
+          data-name="science"></button><button class="dot-value-button science" name="act_science" value="2"
+          data-name="science"></button><button class="dot-value-button science" name="act_science" value="3"
+          data-name="science"></button><button class="dot-value-button science" name="act_science" value="4"
+          data-name="science"></button><button class="dot-value-button science" name="act_science" value="5"
+          data-name="science"></button></div>
     </div>
     <div class="skill-value-wrapper">
       <div class="skill-roll-wrapper">
@@ -655,14 +595,12 @@
             value="!rollWerewolf technology ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}"></button>
         </div>
       </div>
-      <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-          name="attr_technology" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_technology" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_technology" value="2"><span></span><span>&nbsp;</span><input
-          class="sheet-defaultRadioBox" type="radio" name="attr_technology"
-          value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-          name="attr_technology" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-          type="radio" name="attr_technology" value="5"><span></span><span>&nbsp;</span></div>
+      <div class="button-set-wrapper"><button class="dot-value-button technology" name="act_technology" value="1"
+          data-name="technology"></button><button class="dot-value-button technology" name="act_technology" value="2"
+          data-name="technology"></button><button class="dot-value-button technology" name="act_technology" value="3"
+          data-name="technology"></button><button class="dot-value-button technology" name="act_technology" value="4"
+          data-name="technology"></button><button class="dot-value-button technology" name="act_technology" value="5"
+          data-name="technology"></button></div>
     </div>
   </div>
 </div>
@@ -675,39 +613,36 @@
       <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf glory ?{Modifier}"></button></div>
     </div>
     <div class="roll-btn-wrapper"></div>
-    <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-        name="attr_glory" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_glory" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_glory" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_glory" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_glory" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_glory" value="5"><span></span><span>&nbsp;</span></div>
+    <div class="button-set-wrapper"><button class="dot-value-button glory" name="act_glory" value="1"
+        data-name="glory"></button><button class="dot-value-button glory" name="act_glory" value="2"
+        data-name="glory"></button><button class="dot-value-button glory" name="act_glory" value="3"
+        data-name="glory"></button><button class="dot-value-button glory" name="act_glory" value="4"
+        data-name="glory"></button><button class="dot-value-button glory" name="act_glory" value="5"
+        data-name="glory"></button></div>
   </div>
   <div class="renown-value-wrapper">
     <div class="text-roll-wrapper">
       <h3 class="renown">Honor</h3>
       <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf honor ?{Modifier}"></button></div>
     </div>
-    <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-        name="attr_honor" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_honor" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_honor" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_honor" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_honor" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_honor" value="5"><span></span><span>&nbsp;</span></div>
+    <div class="button-set-wrapper"><button class="dot-value-button honor" name="act_honor" value="1"
+        data-name="honor"></button><button class="dot-value-button honor" name="act_honor" value="2"
+        data-name="honor"></button><button class="dot-value-button honor" name="act_honor" value="3"
+        data-name="honor"></button><button class="dot-value-button honor" name="act_honor" value="4"
+        data-name="honor"></button><button class="dot-value-button honor" name="act_honor" value="5"
+        data-name="honor"></button></div>
   </div>
   <div class="renown-value-wrapper">
     <div class="text-roll-wrapper">
       <h3 class="renown">Wisdom</h3>
       <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf wisdom ?{Modifier}"></button></div>
     </div>
-    <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-        name="attr_wisdom" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_wisdom" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_wisdom" value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_wisdom" value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_wisdom" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-        name="attr_wisdom" value="5"><span></span><span>&nbsp;</span></div>
+    <div class="button-set-wrapper"><button class="dot-value-button wisdom" name="act_wisdom" value="1"
+        data-name="wisdom"></button><button class="dot-value-button wisdom" name="act_wisdom" value="2"
+        data-name="wisdom"></button><button class="dot-value-button wisdom" name="act_wisdom" value="3"
+        data-name="wisdom"></button><button class="dot-value-button wisdom" name="act_wisdom" value="4"
+        data-name="wisdom"></button><button class="dot-value-button wisdom" name="act_wisdom" value="5"
+        data-name="wisdom"></button></div>
   </div>
 </div>
 <h2 class="category-title">Gifts & Rites</h2>
@@ -782,14 +717,13 @@
     <h3 class="rage">Rage</h3>
     <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf 1"></button></div>
   </div>
-  <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-      name="attr_rage" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio" name="attr_rage"
-      value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio" name="attr_rage"
-      value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio" name="attr_rage"
-      value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio" name="attr_rage"
-      value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio" name="attr_rage"
-      value="5"><span></span><span>&nbsp;</span></div>
-</div><input type="hidden" name="attr_health_mod" value="0">
+  <div class="button-set-wrapper"><button class="dot-value-button rage" name="act_rage" value="1"
+      data-name="rage"></button><button class="dot-value-button rage" name="act_rage" value="2"
+      data-name="rage"></button><button class="dot-value-button rage" name="act_rage" value="3"
+      data-name="rage"></button><button class="dot-value-button rage" name="act_rage" value="4"
+      data-name="rage"></button><button class="dot-value-button rage" name="act_rage" value="5"
+      data-name="rage"></button></div>
+</div><input type="hidden" name="attr_click_history" value="0">
 <h1 class="werewolf-title">Werewolf</h1><!-- BACK DESCRIPTION-->
 <table class="tenet-table">
   <thead>
@@ -821,169 +755,157 @@
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw0"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value0" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value0" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value0"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value0" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value0"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value0" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value0"
+                name="act_advantage_flaw_value0" value="1" data-name="advantage_flaw_value0"></button><button
+                class="dot-value-button advantage_flaw_value0" name="act_advantage_flaw_value0" value="2"
+                data-name="advantage_flaw_value0"></button><button class="dot-value-button advantage_flaw_value0"
+                name="act_advantage_flaw_value0" value="3" data-name="advantage_flaw_value0"></button><button
+                class="dot-value-button advantage_flaw_value0" name="act_advantage_flaw_value0" value="4"
+                data-name="advantage_flaw_value0"></button><button class="dot-value-button advantage_flaw_value0"
+                name="act_advantage_flaw_value0" value="5" data-name="advantage_flaw_value0"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw1"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value1" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value1" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value1"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value1" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value1"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value1" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value1"
+                name="act_advantage_flaw_value1" value="1" data-name="advantage_flaw_value1"></button><button
+                class="dot-value-button advantage_flaw_value1" name="act_advantage_flaw_value1" value="2"
+                data-name="advantage_flaw_value1"></button><button class="dot-value-button advantage_flaw_value1"
+                name="act_advantage_flaw_value1" value="3" data-name="advantage_flaw_value1"></button><button
+                class="dot-value-button advantage_flaw_value1" name="act_advantage_flaw_value1" value="4"
+                data-name="advantage_flaw_value1"></button><button class="dot-value-button advantage_flaw_value1"
+                name="act_advantage_flaw_value1" value="5" data-name="advantage_flaw_value1"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw2"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value2" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value2" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value2"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value2" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value2"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value2" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value2"
+                name="act_advantage_flaw_value2" value="1" data-name="advantage_flaw_value2"></button><button
+                class="dot-value-button advantage_flaw_value2" name="act_advantage_flaw_value2" value="2"
+                data-name="advantage_flaw_value2"></button><button class="dot-value-button advantage_flaw_value2"
+                name="act_advantage_flaw_value2" value="3" data-name="advantage_flaw_value2"></button><button
+                class="dot-value-button advantage_flaw_value2" name="act_advantage_flaw_value2" value="4"
+                data-name="advantage_flaw_value2"></button><button class="dot-value-button advantage_flaw_value2"
+                name="act_advantage_flaw_value2" value="5" data-name="advantage_flaw_value2"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw3"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value3" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value3" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value3"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value3" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value3"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value3" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value3"
+                name="act_advantage_flaw_value3" value="1" data-name="advantage_flaw_value3"></button><button
+                class="dot-value-button advantage_flaw_value3" name="act_advantage_flaw_value3" value="2"
+                data-name="advantage_flaw_value3"></button><button class="dot-value-button advantage_flaw_value3"
+                name="act_advantage_flaw_value3" value="3" data-name="advantage_flaw_value3"></button><button
+                class="dot-value-button advantage_flaw_value3" name="act_advantage_flaw_value3" value="4"
+                data-name="advantage_flaw_value3"></button><button class="dot-value-button advantage_flaw_value3"
+                name="act_advantage_flaw_value3" value="5" data-name="advantage_flaw_value3"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw4"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value4" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value4" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value4"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value4" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value4"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value4" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value4"
+                name="act_advantage_flaw_value4" value="1" data-name="advantage_flaw_value4"></button><button
+                class="dot-value-button advantage_flaw_value4" name="act_advantage_flaw_value4" value="2"
+                data-name="advantage_flaw_value4"></button><button class="dot-value-button advantage_flaw_value4"
+                name="act_advantage_flaw_value4" value="3" data-name="advantage_flaw_value4"></button><button
+                class="dot-value-button advantage_flaw_value4" name="act_advantage_flaw_value4" value="4"
+                data-name="advantage_flaw_value4"></button><button class="dot-value-button advantage_flaw_value4"
+                name="act_advantage_flaw_value4" value="5" data-name="advantage_flaw_value4"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw5"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value5" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value5" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value5"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value5" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value5"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value5" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value5"
+                name="act_advantage_flaw_value5" value="1" data-name="advantage_flaw_value5"></button><button
+                class="dot-value-button advantage_flaw_value5" name="act_advantage_flaw_value5" value="2"
+                data-name="advantage_flaw_value5"></button><button class="dot-value-button advantage_flaw_value5"
+                name="act_advantage_flaw_value5" value="3" data-name="advantage_flaw_value5"></button><button
+                class="dot-value-button advantage_flaw_value5" name="act_advantage_flaw_value5" value="4"
+                data-name="advantage_flaw_value5"></button><button class="dot-value-button advantage_flaw_value5"
+                name="act_advantage_flaw_value5" value="5" data-name="advantage_flaw_value5"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw6"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value6" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value6" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value6"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value6" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value6"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value6" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value6"
+                name="act_advantage_flaw_value6" value="1" data-name="advantage_flaw_value6"></button><button
+                class="dot-value-button advantage_flaw_value6" name="act_advantage_flaw_value6" value="2"
+                data-name="advantage_flaw_value6"></button><button class="dot-value-button advantage_flaw_value6"
+                name="act_advantage_flaw_value6" value="3" data-name="advantage_flaw_value6"></button><button
+                class="dot-value-button advantage_flaw_value6" name="act_advantage_flaw_value6" value="4"
+                data-name="advantage_flaw_value6"></button><button class="dot-value-button advantage_flaw_value6"
+                name="act_advantage_flaw_value6" value="5" data-name="advantage_flaw_value6"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw7"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value7" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value7" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value7"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value7" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value7"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value7" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value7"
+                name="act_advantage_flaw_value7" value="1" data-name="advantage_flaw_value7"></button><button
+                class="dot-value-button advantage_flaw_value7" name="act_advantage_flaw_value7" value="2"
+                data-name="advantage_flaw_value7"></button><button class="dot-value-button advantage_flaw_value7"
+                name="act_advantage_flaw_value7" value="3" data-name="advantage_flaw_value7"></button><button
+                class="dot-value-button advantage_flaw_value7" name="act_advantage_flaw_value7" value="4"
+                data-name="advantage_flaw_value7"></button><button class="dot-value-button advantage_flaw_value7"
+                name="act_advantage_flaw_value7" value="5" data-name="advantage_flaw_value7"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw8"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value8" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value8" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value8"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value8" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value8"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value8" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value8"
+                name="act_advantage_flaw_value8" value="1" data-name="advantage_flaw_value8"></button><button
+                class="dot-value-button advantage_flaw_value8" name="act_advantage_flaw_value8" value="2"
+                data-name="advantage_flaw_value8"></button><button class="dot-value-button advantage_flaw_value8"
+                name="act_advantage_flaw_value8" value="3" data-name="advantage_flaw_value8"></button><button
+                class="dot-value-button advantage_flaw_value8" name="act_advantage_flaw_value8" value="4"
+                data-name="advantage_flaw_value8"></button><button class="dot-value-button advantage_flaw_value8"
+                name="act_advantage_flaw_value8" value="5" data-name="advantage_flaw_value8"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw9"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value9" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value9" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value9"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value9" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value9"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value9" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value9"
+                name="act_advantage_flaw_value9" value="1" data-name="advantage_flaw_value9"></button><button
+                class="dot-value-button advantage_flaw_value9" name="act_advantage_flaw_value9" value="2"
+                data-name="advantage_flaw_value9"></button><button class="dot-value-button advantage_flaw_value9"
+                name="act_advantage_flaw_value9" value="3" data-name="advantage_flaw_value9"></button><button
+                class="dot-value-button advantage_flaw_value9" name="act_advantage_flaw_value9" value="4"
+                data-name="advantage_flaw_value9"></button><button class="dot-value-button advantage_flaw_value9"
+                name="act_advantage_flaw_value9" value="5" data-name="advantage_flaw_value9"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw10"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value10" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value10" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value10"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value10" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value10"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value10" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value10"
+                name="act_advantage_flaw_value10" value="1" data-name="advantage_flaw_value10"></button><button
+                class="dot-value-button advantage_flaw_value10" name="act_advantage_flaw_value10" value="2"
+                data-name="advantage_flaw_value10"></button><button class="dot-value-button advantage_flaw_value10"
+                name="act_advantage_flaw_value10" value="3" data-name="advantage_flaw_value10"></button><button
+                class="dot-value-button advantage_flaw_value10" name="act_advantage_flaw_value10" value="4"
+                data-name="advantage_flaw_value10"></button><button class="dot-value-button advantage_flaw_value10"
+                name="act_advantage_flaw_value10" value="5" data-name="advantage_flaw_value10"></button></div>
           </td>
         </tr>
         <tr>
           <td><input class="table-input" type="text" name="attr_advantage_flaw11"></td>
           <td>
-            <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-                name="attr_advantage_flaw_value11" value="0" checked><span></span><input class="sheet-defaultRadioBox"
-                type="radio" name="attr_advantage_flaw_value11" value="1"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value11"
-                value="2"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value11" value="3"><span></span><span>&nbsp;</span><input
-                class="sheet-defaultRadioBox" type="radio" name="attr_advantage_flaw_value11"
-                value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-                name="attr_advantage_flaw_value11" value="5"><span></span><span>&nbsp;</span></div>
+            <div class="button-set-wrapper"><button class="dot-value-button advantage_flaw_value11"
+                name="act_advantage_flaw_value11" value="1" data-name="advantage_flaw_value11"></button><button
+                class="dot-value-button advantage_flaw_value11" name="act_advantage_flaw_value11" value="2"
+                data-name="advantage_flaw_value11"></button><button class="dot-value-button advantage_flaw_value11"
+                name="act_advantage_flaw_value11" value="3" data-name="advantage_flaw_value11"></button><button
+                class="dot-value-button advantage_flaw_value11" name="act_advantage_flaw_value11" value="4"
+                data-name="advantage_flaw_value11"></button><button class="dot-value-button advantage_flaw_value11"
+                name="act_advantage_flaw_value11" value="5" data-name="advantage_flaw_value11"></button></div>
           </td>
         </tr>
       </tbody>
@@ -994,28 +916,24 @@
           <h3 class="rollable-text">Hauglosk</h3>
           <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf harano hauglosk"></button></div>
         </div>
-        <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-            name="attr_hauglosk" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-            name="attr_hauglosk" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-            type="radio" name="attr_hauglosk" value="2"><span></span><span>&nbsp;</span><input
-            class="sheet-defaultRadioBox" type="radio" name="attr_hauglosk"
-            value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-            name="attr_hauglosk" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-            type="radio" name="attr_hauglosk" value="5"><span></span><span>&nbsp;</span></div>
+        <div class="button-set-wrapper"><button class="dot-value-button hauglosk" name="act_hauglosk" value="1"
+            data-name="hauglosk"></button><button class="dot-value-button hauglosk" name="act_hauglosk" value="2"
+            data-name="hauglosk"></button><button class="dot-value-button hauglosk" name="act_hauglosk" value="3"
+            data-name="hauglosk"></button><button class="dot-value-button hauglosk" name="act_hauglosk" value="4"
+            data-name="hauglosk"></button><button class="dot-value-button hauglosk" name="act_hauglosk" value="5"
+            data-name="hauglosk"></button></div>
       </div>
       <div class="hauglosk-wrapper">
         <div class="text-roll-wrapper">
           <h3 class="rollable-text">Harano</h3>
           <div class="roll-btn-wrapper"><button type="roll" value="!rollWerewolf harano hauglosk"></button></div>
         </div>
-        <div class="radio-button-set-wrapper"><input class="sheet-defaultRadioBox remove-value-radio" type="radio"
-            name="attr_harano" value="0" checked><span></span><input class="sheet-defaultRadioBox" type="radio"
-            name="attr_harano" value="1"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-            type="radio" name="attr_harano" value="2"><span></span><span>&nbsp;</span><input
-            class="sheet-defaultRadioBox" type="radio" name="attr_harano"
-            value="3"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox" type="radio"
-            name="attr_harano" value="4"><span></span><span>&nbsp;</span><input class="sheet-defaultRadioBox"
-            type="radio" name="attr_harano" value="5"><span></span><span>&nbsp;</span></div>
+        <div class="button-set-wrapper"><button class="dot-value-button harano" name="act_harano" value="1"
+            data-name="harano"></button><button class="dot-value-button harano" name="act_harano" value="2"
+            data-name="harano"></button><button class="dot-value-button harano" name="act_harano" value="3"
+            data-name="harano"></button><button class="dot-value-button harano" name="act_harano" value="4"
+            data-name="harano"></button><button class="dot-value-button harano" name="act_harano" value="5"
+            data-name="harano"></button></div>
       </div>
     </div>
     <div class="appearance-history-wrapper">
@@ -1121,4 +1039,94 @@
     <h3 class="sheet-success-title">Successes: {{successes}}</h3>
   </div>
 </rolltemplate>
-<script type="text/worker"></script>
+<script type="text/worker">const SKILLS = [
+  'athletics',    'brawl',
+  'craft',        'driving',
+  'firearms',     'larceny',
+  'melee',        'stealth',
+  'survival',     'animal_ken',
+  'etiquette',    'insight',
+  'intimidation', 'leadership',
+  'performance',  'persuasion',
+  'streetwise',   'subterfuge',
+  'academics',    'awareness',
+  'finance',      'investigation',
+  'medicine',     'occult',
+  'politics',     'science',
+  'technology'
+]
+const ATTRS = [
+  'strength',
+  'dexterity',
+  'stamina',
+  'charisma',
+  'manipulation',
+  'composure',
+  'intelligence',
+  'wits',
+  'resolve'
+]
+const OTHER_ATTRS = ["glory", "wisdom", "honor", "rage", "hauglosk", "harano"]
+
+function applyStyleToDotButtonSet(name, value) {
+  let dotOne = $20(`.${name}[value='1']`)
+  if (value === 0 ) {
+    dotOne.removeClass("clear-me selected")
+    return;
+  }
+
+  for (let i = 1; i <=5; i++) {
+    let dot = $20(`.${name}[value="${i}"]`);
+    i<=value ? dot.addClass("selected") : dot.removeClass("selected")
+  }
+
+  if (value === 1) {
+    dotOne.addClass("clear-me")
+  }
+}
+
+function doubleResetClick(hist, curAttr, curVal) {
+  let prevName = hist.click_history.name
+  let prevVal = hist.click_history.val
+  return prevName === curAttr && prevVal === 1 && curVal === 1
+}
+
+function restoreDotStyling(){
+  restoreAttributeStyling(SKILLS.concat(ATTRS).concat(OTHER_ATTRS));
+}
+
+function restoreAttributeStyling(arr){
+  getAttrs(arr, (names_values)=> {
+    let keys = Object.keys(names_values);
+    keys.forEach(key=>{
+      applyStyleToDotButtonSet(key, names_values[key])
+    })
+  })
+}
+
+function setUpDotValueButton() {
+  $20('.dot-value-button').on('click', e => {
+    let dotValue = parseInt(e.htmlAttributes.value);
+    let attrToChange = e.htmlAttributes["data-name"];
+
+    getAttrs(["click_history"], hist => {
+      if (doubleResetClick(hist, attrToChange, dotValue)) {
+        dotValue = 0;
+      }
+
+      applyStyleToDotButtonSet(attrToChange, dotValue);
+
+      setAttrs(
+        {
+          [attrToChange]: dotValue,
+          click_history: { name: attrToChange, val: dotValue }
+        });
+    })
+  })
+}
+
+on("sheet:opened", () => {
+  setUpDotValueButton();
+  restoreDotStyling();
+});
+</script>
