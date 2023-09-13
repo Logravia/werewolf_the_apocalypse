@@ -3,9 +3,7 @@ mixin button-set(attributeName, count)
     - for (let i = 1; i <= count; i++)
         button( class=`dot-value-button ${attributeName}` name="act_" + attributeName value=i data-name=attributeName)
 
-mixin checkbox-set(attributeName, count)
-  div.checkbox-set-wrapper
+mixin health-will-set(attributeName, count)
+  div.health-will-wrapper
     - for (let i = 1; i <= count; i++)
-      label
-        input.sheet-defaultCheckbox(type="checkbox" name=`attr_${attributeName}_${i}` value="empty")
-        span.fake-checkbox
+        button( class=`health-will-button ${attributeName}` name="act_" + attributeName value=i data-name=attributeName)

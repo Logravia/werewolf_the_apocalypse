@@ -605,44 +605,17 @@ input:focus {
 
 /* DOT, CHECKBOX STYLING */
 
-.checkbox-set-wrapper {
+.health-will-wrapper {
     display: flex;
     gap: 4px;
 }
 
-input.sheet-defaultCheckbox[type="checkbox"] {
-  display: none;
-}
-
-.fake-checkbox {
-  position: relative;
+.health-will-button {
   border: 3px solid #000;
   border-radius: 20% 25% 15% 12%;
-  display: inline-block;
   width: 17px;
   height: 17px;
-  position: relative;
-}
-
-input[type="checkbox"][value="empty"] + .fake-checkbox {
-    background: white;
-}
-
-input[type="checkbox"][value="full"] + .fake-checkbox {
-    background: green;
-}
-
-input[type="checkbox"][value="grievous"] + .fake-checkbox {
-    background: red;
-}
-
-input[type="checkbox"][value="slash"] + .fake-checkbox {
-    background: yellow;
-}
-
-input[type=checkbox]:checked + .fake-checkbox {
-  background: #f00;
-  color: #fff;
+  padding: 0;
 }
 
 .button-set-wrapper {
