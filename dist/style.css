@@ -571,44 +571,17 @@ input:focus {
 }
 
 /* DOT, CHECKBOX STYLING */
-.checkbox-set-wrapper {
+.health-will-wrapper {
   display: flex;
   gap: 4px;
 }
 
-input.sheet-defaultCheckbox[type=checkbox] {
-  display: none;
-}
-
-.fake-checkbox {
-  position: relative;
+.health-will-button {
   border: 3px solid #000;
   border-radius: 20% 25% 15% 12%;
-  display: inline-block;
   width: 17px;
   height: 17px;
-  position: relative;
-}
-
-input[type=checkbox][value=empty] + .fake-checkbox {
-  background: white;
-}
-
-input[type=checkbox][value=full] + .fake-checkbox {
-  background: green;
-}
-
-input[type=checkbox][value=grievous] + .fake-checkbox {
-  background: red;
-}
-
-input[type=checkbox][value=slash] + .fake-checkbox {
-  background: yellow;
-}
-
-input[type=checkbox]:checked + .fake-checkbox {
-  background: #f00;
-  color: #fff;
+  padding: 0;
 }
 
 .button-set-wrapper {
@@ -629,4 +602,20 @@ input[type=checkbox]:checked + .fake-checkbox {
 
 .selected {
   background: #3c3737;
+}
+
+/* HEALTH WILLPOWER CRINOS */
+.full {
+  background: rgb(54, 62, 54);
+  background: linear-gradient(54deg, rgb(54, 62, 54) 0%, rgb(61, 97, 57) 47%, rgb(85, 175, 93) 100%);
+}
+
+.scratch {
+  background: rgb(62, 55, 54);
+  background: linear-gradient(54deg, rgb(62, 55, 54) 0%, rgb(97, 81, 57) 47%, rgb(175, 160, 85) 100%);
+}
+
+.grievous {
+  background: rgb(24, 22, 22);
+  background: linear-gradient(54deg, rgb(24, 22, 22) 0%, rgb(131, 48, 48) 52%, rgb(179, 58, 58) 100%);
 }

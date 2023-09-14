@@ -638,3 +638,26 @@ input:focus {
 .selected {
     background: #3c3737;
 }
+
+/* HEALTH WILLPOWER CRINOS */
+
+.health .empty {
+
+}
+
+
+.full {
+    background: rgb(54,62,54);
+    background: linear-gradient(54deg, rgba(54,62,54,1) 0%, rgba(61,97,57,1) 47%, rgba(85,175,93,1) 100%);
+}
+
+.scratch {
+    background: rgb(62,55,54);
+    background: linear-gradient(54deg, rgba(62,55,54,1) 0%, rgba(97,81,57,1) 47%, rgba(175,160,85,1) 100%);
+}
+
+
+.grievous {
+background: rgb(24,22,22);
+background: linear-gradient(54deg, rgba(24,22,22,1) 0%, rgba(131,48,48,1) 52%, rgba(179,58,58,1) 100%);
+}

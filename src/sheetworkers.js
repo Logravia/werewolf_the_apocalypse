@@ -26,10 +26,11 @@ const ATTRS = [
   'resolve'
 ]
 const OTHER_ATTRS = ["glory", "wisdom", "honor", "rage", "hauglosk", "harano"]
-
+const HITPOINT_ATTRS = ["health_status", "willpower_status", "crinos_status"]
+const HITPOINT_TYPES = ["health", "willpower", "crinos"]
 const HITPOINT_ORDER = ["empty", "full", "scratch", "grievous"];
-
 const MAX_HITPOINTS = 10;
+const HITPOINT_TEMPLATE = {empty: 10, full: 0, scratch: 0, grievous: 0}
 
 function applyStyleToDotButtonSet(name, value) {
   let dotOne = $20(`.${name}[value='1']`)
@@ -97,8 +98,9 @@ function clearHitpointBoxes(name){
 
 
 function styleHitpointBoxes(name, status) {
-  let i = 1
+  clearHitpointBoxes(name)
 
+  let i = 1
   for(; i<=status.full; i++){
     $20(`.${name}[value="${i}"]`).addClass("full")
   }
@@ -110,25 +112,65 @@ function styleHitpointBoxes(name, status) {
   for(; i<=status.grievous + status.scratch + status.full; i++){
     $20(`.${name}[value="${i}"]`).addClass("grievous")
   }
+  for(; i<=status.grievous + status.scratch + status.full + status.empty; i++){
+    $20(`.${name}[value="${i}"]`).addClass("empty")
+  }
+}
+
+function restoreHitpointStyles(){
+  getAttrs(HITPOINT_ATTRS, vals=>{
+    HITPOINT_ATTRS.forEach((attr,i)=>{
+      styleHitpointBoxes(HITPOINT_TYPES[i], vals[attr])
+    })
+  })
 }
 
 function nextHitpointState(curState){
   const currentIndex = HITPOINT_ORDER.indexOf(curState);
   const nextIndex = (currentIndex + 1) % HITPOINT_ORDER.length;
+  console.log(HITPOINT_ORDER[nextIndex])
   return HITPOINT_ORDER[nextIndex];
 }
 
 function setUpHealthWillButton() {
   $20(".health-will-button").on("click", e => {
     let name = e.htmlAttributes["data-name"];
-    let injury = e.htmlAttributes.class.split(" ").pop() // last class should be injury type
+    let curHitpointState = e.htmlAttributes.class.split(" ").pop() // last class should be injury type, very brittle
     let attrStr = `${name}_status`
+    let clickVal = parseInt(e.htmlAttributes.value);
 
     getAttrs([attrStr], vals => {
-      let status = JSON.parse(vals[attrStr])
+      let status = vals[attrStr]
+
+      if (clickVal === 1 && status.full > 1) {
+        status.full -= 1
+        status.empty += 1
+      } else {
+        status[curHitpointState] -= 1
+        status[nextHitpointState(curHitpointState)] += 1
+      }
 
       styleHitpointBoxes(name, status);
+      setAttrs({
+        [attrStr] : status
+      })
     })
+  })
+}
+
+function initHealthWillCrinos() {
+  let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
+  let containersToInit = {}
+
+  getAttrs(hitpointContainers, vals=>{
+    hitpointContainers.forEach(name=>{
+      if (vals[name] === "empty") {
+        containersToInit[name] = HITPOINT_TEMPLATE;
+      }
+    })
+    if (Object.keys(containersToInit).length !== 0) {
+      setAttrs(containersToInit)
+    }
   })
 }
 
@@ -136,9 +178,17 @@ on("sheet:opened", () => {
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
+  restoreHitpointStyles();
 });
 
 on("clicked:test", ()=>{
-  clearHitpointBoxes("health");
-  console.log("I've been called")
+  let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
+  let containersToInit = {}
+
+  getAttrs(hitpointContainers, vals => {
+    hitpointContainers.forEach(name => {
+      containersToInit[name] = HITPOINT_TEMPLATE;
+    })
+    setAttrs(containersToInit)
+  })
 })
