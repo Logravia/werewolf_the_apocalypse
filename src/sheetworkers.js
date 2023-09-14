@@ -30,7 +30,7 @@ const HITPOINT_ATTRS = ["health_status", "willpower_status", "crinos_status"]
 const HITPOINT_TYPES = ["health", "willpower", "crinos"]
 const HITPOINT_ORDER = ["empty", "full", "scratch", "grievous"];
 const MAX_HITPOINTS = 10;
-const HITPOINT_TEMPLATE = {empty: 10, full: 0, scratch: 0, grievous: 0}
+const HITPOINT_TEMPLATE = {empty: 10, full: 0, scratch: 0, grievous: 0, max: 3, bonus: 0}
 
 function applyStyleToDotButtonSet(name, value) {
   let dotOne = $20(`.${name}[value='1']`)
@@ -156,13 +156,13 @@ function setUpHealthWillButton() {
   })
 }
 
-function initHealthWillCrinos() {
+function initHealthWillCrinos(reset=false) {
   let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
   let containersToInit = {}
 
   getAttrs(hitpointContainers, vals=>{
     hitpointContainers.forEach(name=>{
-      if (vals[name] === "empty") {
+      if (vals[name] === "empty" || reset) {
         containersToInit[name] = HITPOINT_TEMPLATE;
       }
     })
@@ -172,13 +172,55 @@ function initHealthWillCrinos() {
   })
 }
 
+function undamaged(health){
+  return health.scratch === 0 && health.grievous === 0
+}
+
+function bonusHitpoints(health){
+  let bonus = (health.full + health.scratch + health.grievous) - health.max
+  if (bonus < 0) { return 0 };
+  return bonus;
+}
+
 on("sheet:opened", () => {
-  initHealthWillCrinos();
+  initHealthWillCrinos(true);
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
   restoreHitpointStyles();
 });
 
-on("clicked:test", ()=>{
+on("change:stamina", ()=>{
+  getAttrs(["health_status", "stamina"], vals=>{
+    let health = vals.health_status
+    let stamina = vals.stamina
+
+    health.max = stamina + 3
+
+    if (undamaged(health)) {
+      health.full = health.max
+      health.empty = 10 - health.max
+    }
+
+    styleHitpointBoxes("health", health)
+    setAttrs({health_status: health});
+  })
+})
+
+on("change:resolve change:composure", ()=>{
+  getAttrs(["willpower_status", "resolve", "composure"], vals=>{
+    let composure = vals.composure
+    let resolve = vals.resolve
+    let willpower = vals.willpower_status
+
+    willpower.max = composure + resolve
+
+    if (undamaged(willpower)) {
+      willpower.full = willpower.max
+      willpower.empty = 10 - willpower.max
+    }
+
+    styleHitpointBoxes("willpower", willpower)
+    setAttrs({willpower_status: willpower});
+  })
 })
