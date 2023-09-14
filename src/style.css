@@ -716,3 +716,11 @@ background: linear-gradient(54deg, rgba(24,22,22,1) 0%, rgba(131,48,48,1) 52%, r
 .tab-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
 }
+
+
+/* NOTES TAB */
+
+.notes-sheet .notes-wrapper {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
