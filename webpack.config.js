@@ -10,7 +10,7 @@ module.exports = {
 
   entry: {
     script: './src/index.js', // => dist/script.js
-    index: './src/sheet.pug', // => dist/index.html
+    index: './src/front_sheet.pug', // => dist/index.html
     style: './src/style.css'
   },
 
