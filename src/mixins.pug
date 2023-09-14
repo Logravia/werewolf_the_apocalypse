@@ -6,4 +6,4 @@ mixin button-set(attributeName, count)
 mixin health-will-set(attributeName, count)
   div.health-will-wrapper
     - for (let i = 1; i <= count; i++)
-        button( class=`health-will-button ${attributeName}` name="act_" + attributeName value=i data-name=attributeName)
+        button( class=`health-will-button ${attributeName}` name="act_" + attributeName value=i data-name=attributeName data-injury-type="")

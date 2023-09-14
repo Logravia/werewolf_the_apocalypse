@@ -27,6 +27,10 @@ const ATTRS = [
 ]
 const OTHER_ATTRS = ["glory", "wisdom", "honor", "rage", "hauglosk", "harano"]
 
+const HITPOINT_ORDER = ["empty", "full", "scratch", "grievous"];
+
+const MAX_HITPOINTS = 10;
+
 function applyStyleToDotButtonSet(name, value) {
   let dotOne = $20(`.${name}[value='1']`)
   if (value === 0 ) {
@@ -83,8 +87,58 @@ function setUpDotValueButton() {
     })
   })
 }
+function clearHitpointBoxes(name){
+  let classesToRemoveStr = HITPOINT_ORDER.join(" ")
+
+  for (let i = 1; i <= MAX_HITPOINTS; i++) {
+    $20(`.${name}`).removeClass(classesToRemoveStr)
+  }
+}
+
+
+function styleHitpointBoxes(name, status) {
+  let i = 1
+
+  for(; i<=status.full; i++){
+    $20(`.${name}[value="${i}"]`).addClass("full")
+  }
+
+  for(; i<=status.scratch + status.full; i++){
+    $20(`.${name}[value="${i}"]`).addClass("scratch")
+  }
+
+  for(; i<=status.grievous + status.scratch + status.full; i++){
+    $20(`.${name}[value="${i}"]`).addClass("grievous")
+  }
+}
+
+function nextHitpointState(curState){
+  const currentIndex = HITPOINT_ORDER.indexOf(curState);
+  const nextIndex = (currentIndex + 1) % HITPOINT_ORDER.length;
+  return HITPOINT_ORDER[nextIndex];
+}
+
+function setUpHealthWillButton() {
+  $20(".health-will-button").on("click", e => {
+    let name = e.htmlAttributes["data-name"];
+    let injury = e.htmlAttributes.class.split(" ").pop() // last class should be injury type
+    let attrStr = `${name}_status`
+
+    getAttrs([attrStr], vals => {
+      let status = JSON.parse(vals[attrStr])
+
+      styleHitpointBoxes(name, status);
+    })
+  })
+}
 
 on("sheet:opened", () => {
   setUpDotValueButton();
+  setUpHealthWillButton();
   restoreDotStyling();
 });
+
+on("clicked:test", ()=>{
+  clearHitpointBoxes("health");
+  console.log("I've been called")
+})
