@@ -1,8 +1,7 @@
 <input type="hidden" name="attr_click_history" value="0"><input type="hidden" name="attr_health_status"
   value="empty"><input type="hidden" name="attr_willpower_status" value="empty"><input type="hidden"
   name="attr_crinos_status" value="empty"><!-- TITLE-->
-<h1 class="werewolf-title">Werewolf</h1><button type="action" name="act_test"
-  id="specialButton">ACTION</button><!-- DESCRIPTION TABLE-->
+<h1 class="werewolf-title">Werewolf</h1><!-- DESCRIPTION TABLE-->
 <div class="description-grid-wrapper">
   <div class="description-grid">
     <div class="label-input-wrapper"><label class="char-desc-label">name:</label><input class="description-input"
@@ -1136,7 +1135,6 @@ function clearHitpointBoxes(name){
   }
 }
 
-
 function styleHitpointBoxes(name, status) {
   clearHitpointBoxes(name)
 
@@ -1168,7 +1166,6 @@ function restoreHitpointStyles(){
 function nextHitpointState(curState){
   const currentIndex = HITPOINT_ORDER.indexOf(curState);
   const nextIndex = (currentIndex + 1) % HITPOINT_ORDER.length;
-  console.log(HITPOINT_ORDER[nextIndex])
   return HITPOINT_ORDER[nextIndex];
 }
 
@@ -1215,6 +1212,7 @@ function initHealthWillCrinos() {
 }
 
 on("sheet:opened", () => {
+  initHealthWillCrinos();
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
@@ -1222,14 +1220,5 @@ on("sheet:opened", () => {
 });
 
 on("clicked:test", ()=>{
-  let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
-  let containersToInit = {}
-
-  getAttrs(hitpointContainers, vals => {
-    hitpointContainers.forEach(name => {
-      containersToInit[name] = HITPOINT_TEMPLATE;
-    })
-    setAttrs(containersToInit)
-  })
 })
 </script>

@@ -96,7 +96,6 @@ function clearHitpointBoxes(name){
   }
 }
 
-
 function styleHitpointBoxes(name, status) {
   clearHitpointBoxes(name)
 
@@ -128,7 +127,6 @@ function restoreHitpointStyles(){
 function nextHitpointState(curState){
   const currentIndex = HITPOINT_ORDER.indexOf(curState);
   const nextIndex = (currentIndex + 1) % HITPOINT_ORDER.length;
-  console.log(HITPOINT_ORDER[nextIndex])
   return HITPOINT_ORDER[nextIndex];
 }
 
@@ -175,6 +173,7 @@ function initHealthWillCrinos() {
 }
 
 on("sheet:opened", () => {
+  initHealthWillCrinos();
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
@@ -182,13 +181,4 @@ on("sheet:opened", () => {
 });
 
 on("clicked:test", ()=>{
-  let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
-  let containersToInit = {}
-
-  getAttrs(hitpointContainers, vals => {
-    hitpointContainers.forEach(name => {
-      containersToInit[name] = HITPOINT_TEMPLATE;
-    })
-    setAttrs(containersToInit)
-  })
 })
