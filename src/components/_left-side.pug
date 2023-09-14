@@ -1,0 +1,39 @@
+//LEFT
+div.left
+  table.flaw-table
+    thead
+      tr
+        th(colspan="2")
+          h3 Advantages & Flaws
+    tbody
+      - for (let i=0; i<12; i++)
+        tr
+          td
+            input.table-input(type='text' name='attr_advantage_flaw'+i)
+          td
+            +button-set("advantage_flaw_value"+i, 5)
+
+
+  div.harano-hauglosk-wrapper
+    div.harano-wrapper
+      div.text-roll-wrapper
+        h3.rollable-text Hauglosk
+        div.roll-btn-wrapper
+          button(type="roll" value=`!rollWerewolf harano hauglosk`)
+      +button-set("hauglosk", 5)
+    div.hauglosk-wrapper
+      div.text-roll-wrapper
+        h3.rollable-text Harano
+        div.roll-btn-wrapper
+          button(type="roll" value=`!rollWerewolf harano hauglosk`)
+      +button-set("harano", 5)
+
+  div.appearance-history-wrapper
+    div.appearance
+      div.floating-title
+        h3 Appearance
+      textarea.long-input(name="attr_appearance")
+    div.history
+      div.floating-title
+        h3 History
+      textarea.long-input(name="attr_history")
