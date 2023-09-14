@@ -182,12 +182,23 @@ function bonusHitpoints(health){
   return bonus;
 }
 
+function setUpTabButtons(){
+  $20(".tab-button").on("click", e=>{
+    let tabName = e.htmlAttributes.value
+    console.log(tabName)
+
+    $20(".tab").removeClass("active")
+    $20(`.${tabName}`).addClass("active")
+  })
+}
+
 on("sheet:opened", () => {
   initHealthWillCrinos(true);
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
   restoreHitpointStyles();
+  setUpTabButtons();
 });
 
 on("change:stamina", ()=>{

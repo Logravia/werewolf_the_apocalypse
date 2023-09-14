@@ -1,0 +1,12 @@
+include mixins.pug
+include hidden_attributes.pug
+
+h1.werewolf-title Werewolf
+include components/_tab-selection.pug
+
+div.front-sheet.tab.active
+  include front_sheet.pug
+div.back-sheet.tab
+  include back_sheet.pug
+div.notes-sheet.tab
+  include notes.pug
