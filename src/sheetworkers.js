@@ -193,7 +193,7 @@ function setUpTabButtons(){
 }
 
 on("sheet:opened", () => {
-  initHealthWillCrinos(true);
+  initHealthWillCrinos();
   setUpDotValueButton();
   setUpHealthWillButton();
   restoreDotStyling();
