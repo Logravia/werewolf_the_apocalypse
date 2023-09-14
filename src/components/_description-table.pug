@@ -1,0 +1,8 @@
+// DESCRIPTION TABLE
+- const character_descriptors = ["name", "concept", "patron", "chronicle", "auspice", "tribe"]
+div.description-grid-wrapper
+  div.description-grid
+   each word in character_descriptors
+     div.label-input-wrapper
+       label.char-desc-label= word + ":"
+       input.description-input(type='text' name=`attr_${word}`)

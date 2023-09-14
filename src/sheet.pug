@@ -1,120 +1,22 @@
 include mixins.pug
 include hidden_attributes.pug
-// TITLE
 
 h1.werewolf-title Werewolf
-
-// DESCRIPTION TABLE
-- const character_descriptors = ["name", "concept", "patron", "chronicle", "auspice", "tribe"]
-div.description-grid-wrapper
-  div.description-grid
-   each word in character_descriptors
-     div.label-input-wrapper
-       label.char-desc-label= word + ":"
-       input.description-input(type='text' name=`attr_${word}`)
-
-// ATTRIBUTES
-- const attributes = {physical: ["strength", "dexterity", "stamina"], social: ["charisma", "manipulation", "composure"],  mental: ["intelligence", "wits", "resolve"] }
-
-hr.sheet-seperator
-h2.category-title Attributes
-
-div.list-container
-  each list, title in attributes
-    div.attribute-list
-      h3.list-title #{title}
-      each attr in list
-        div.name-value-wrapper
-          div.name-roll-button-wrapper
-            p.attribute #{attr}
-            div.roll-btn-wrapper
-              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
-          +button-set(attr, 5)
-    div.centering-border
-
-div.health-will-crinos
-  div.health-will
-    div.health-container
-      h4 Health
-      +health-will-set("health", 10)
-    div.willpower-container
-      h4 Willpower
-      +health-will-set("willpower", 10)
-  div.crinos-stretch-box
-    div.crinos-container
-      h4 Crinos
-        +health-will-set("crinos", 4)
+include components/_description-table.pug
 
 hr.sheet-seperator
 
-// SKILLS
-h2.category-title Skills
-
-- const skills = {left: ["athletics", "brawl", "craft", "driving", "firearms", "larceny", "melee", "stealth", "survival"], mid: ["animal_ken", "etiquette","insight", "intimidation","leadership","performance", "persuasion", "streetwise", "subterfuge"], right: ["academics", "awareness", "finance", "investigation", "medicine", "occult", "politics", "science", "technology"]}
-div.skill-flexbox
-  each list, label in skills
-    div(class=label+'-list')
-      each skill in list
-        div.skill-value-wrapper
-          div.skill-roll-wrapper
-            p.skill #{skill}
-            div.roll-btn-wrapper
-              button(type="roll" value=`!rollWerewolf ${skill} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
-          +button-set(skill, 5)
+include components/_attributes.pug
+include components/_health-will-crinos.pug
 
 hr.sheet-seperator
 
-h2.category-title Renown
+include components/_skills.pug
 
-div.renown-container
-  div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Glory
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf glory ?{Modifier}`)
-    div.roll-btn-wrapper
-    +button-set("glory", 5)
-  div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Honor
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf honor ?{Modifier}`)
-    +button-set("honor", 5)
-  div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Wisdom
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf wisdom ?{Modifier}`)
-    +button-set("wisdom", 5)
+hr.sheet-seperator
 
-h2.category-title Gifts & Rites
-
-table.gift-rite-table
-  tr
-    th.table-name Name
-    th.table-pool Pool & Cost
-    th.table-cost Dice
-    th.table-notes Notes
-    th.table-roll Roll
-  tr
-  each i in [1, 2, 3, 4, 5, 6, 7, 8]
-      tr
-        td
-          input.table-input(type="text" name=`attr_rites_name_${i}`)
-        td
-          input.table-input(type="text" name=`attr_rites_pool_cost${i}`)
-        td
-          input.table-input(type="text" name=`attr_rites_dice_${i}`)
-        td
-          input.table-input(type="text" name=`attr_rites_notes_${i}`)
-        td.roll
-          button(type="roll" value=`!rollWerewolf rites_dice_${i} ?{Modifier}`)
-
-div.rage-value-wrapper
-  div.text-roll-wrapper
-    h3.rage Rage
-    div.roll-btn-wrapper
-      button(type="roll" value=`!rollWerewolf 1`)
-  +button-set("rage", 5)
+include components/_renown.pug
+include components/_gifts-rites.pug
+include components/_rage.pug
 
 include back_sheet.pug

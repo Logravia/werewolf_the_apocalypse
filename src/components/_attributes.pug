@@ -1,0 +1,16 @@
+// ATTRIBUTES
+- const attributes = {physical: ["strength", "dexterity", "stamina"], social: ["charisma", "manipulation", "composure"],  mental: ["intelligence", "wits", "resolve"] }
+h2.category-title Attributes
+
+div.list-container
+  each list, title in attributes
+    div.attribute-list
+      h3.list-title #{title}
+      each attr in list
+        div.name-value-wrapper
+          div.name-roll-button-wrapper
+            p.attribute #{attr}
+            div.roll-btn-wrapper
+              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
+          +button-set(attr, 5)
+    div.centering-border
