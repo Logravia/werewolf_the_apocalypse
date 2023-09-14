@@ -262,5 +262,5 @@ on('chat:message', msg => {
 });
 
 on('ready', () => {
-  sendChat('API', "I'm locked and loaded.")
+
 });
