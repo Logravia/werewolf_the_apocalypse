@@ -1,3 +1,11 @@
+function advantageFlawStrs(){
+ let arr = [];
+  for (let i = 0; i < 12; i++) {
+    arr.push(`advantage_flaw_value${i}`);
+  }
+  return arr;
+}
+
 const SKILLS = [
   'athletics',    'brawl',
   'craft',        'driving',
@@ -31,6 +39,7 @@ const HITPOINT_TYPES = ["health", "willpower", "crinos"]
 const HITPOINT_ORDER = ["empty", "full", "scratch", "grievous"];
 const MAX_HITPOINTS = 10;
 const HITPOINT_TEMPLATE = {empty: 10, full: 0, scratch: 0, grievous: 0, max: 3, bonus: 0}
+const ADVANTAGES_FLAWS = advantageFlawStrs();
 
 function applyStyleToDotButtonSet(name, value) {
   let dotOne = $20(`.${name}[value='1']`)
@@ -56,7 +65,7 @@ function doubleResetClick(hist, curAttr, curVal) {
 }
 
 function restoreDotStyling(){
-  restoreAttributeStyling(SKILLS.concat(ATTRS).concat(OTHER_ATTRS));
+  restoreAttributeStyling(SKILLS.concat(ATTRS).concat(OTHER_ATTRS).concat(ADVANTAGES_FLAWS));
 }
 
 function restoreAttributeStyling(arr){
@@ -185,7 +194,6 @@ function bonusHitpoints(health){
 function setUpTabButtons(){
   $20(".tab-button").on("click", e=>{
     let tabName = e.htmlAttributes.value
-    console.log(tabName)
 
     $20(".tab").removeClass("active")
     $20(`.${tabName}`).addClass("active")
