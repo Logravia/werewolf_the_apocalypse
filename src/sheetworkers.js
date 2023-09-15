@@ -67,10 +67,21 @@ function applyClassToDotButtonSet(name, value) {
   }
 }
 
-function doubleResetClick(hist, curAttr, curVal) {
-  let prevName = hist.click_history.name
-  let prevVal = hist.click_history.val
-  return prevName === curAttr && prevVal === 1 && curVal === 1
+/**
+ * Determines if a click on the dot button should be treated as a reset click.
+ * A reset click occurs when the first dot is clicked twice to remove its value.
+ *
+ * @param {object} clickHistory - Object containing the history of clicks.
+ * @param {string} clickedAttributeName - The name of the attribute that was clicked.
+ * @param {number} clickedAttributeValue - The value of the clicked attribute.
+ * @returns {boolean} True if it's a reset click, otherwise false.
+ */
+function resetClick(hist, clickedAttrName, clickedAttrVal) {
+  const prevName = hist.click_history.name
+  const prevVal = hist.click_history.val
+  const isReset = prevName === clickedAttrName && prevVal === 1 && clickedAttrVal === 1
+
+  return isReset;
 }
 
 function restoreDotStyling(){
@@ -92,7 +103,7 @@ function setUpDotValueButton() {
     let attrToChange = e.htmlAttributes["data-name"];
 
     getAttrs(["click_history"], hist => {
-      if (doubleResetClick(hist, attrToChange, dotValue)) {
+      if (resetClick(hist, attrToChange, dotValue)) {
         dotValue = 0;
       }
 
