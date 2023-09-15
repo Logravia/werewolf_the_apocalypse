@@ -102,6 +102,12 @@ function restoreDotAttributeClasses(){
   })
 }
 
+/**
+ * Sets up event handling for dot-value buttons.
+ *
+ * This function adds a click event handler to elements with the 'dot-value-button' class.
+ * When clicked, it updates the value of a dot button and tracks the click history.
+ */
 function setUpDotValueButton() {
   $20('.dot-value-button').on('click', e => {
     let clickedDotValue = parseInt(e.htmlAttributes.value);
@@ -123,6 +129,11 @@ function setUpDotValueButton() {
   })
 }
 
+/**
+ * Clears hitpoint boxes by removing specified classes.
+ *
+ * @param {string} name - The name of the element group to clear hitpoint boxes.
+ */
 function clearHitpointBoxes(name){
   let classesToRemoveStr = HITPOINT_ORDER.join(" ")
 
@@ -130,7 +141,12 @@ function clearHitpointBoxes(name){
     $20(`.${name}`).removeClass(classesToRemoveStr)
   }
 }
-
+/**
+ * Styles hitpoint boxes based on the provided status. Classes are applied specific order.
+ *
+ * @param {string} name - The name of the hitpoint boxes.
+ * @param {object} status - The status object containing full, scratch, grievous, and empty values.
+ */
 function styleHitpointBoxes(name, status) {
   clearHitpointBoxes(name)
 
