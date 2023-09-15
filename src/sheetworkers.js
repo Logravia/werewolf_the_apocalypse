@@ -238,15 +238,16 @@ function initHealthWillCrinos(reset=false) {
   })
 }
 
-function undamaged(health){
-  return health.scratch === 0 && health.grievous === 0
+function damaged(health){
+  return health.scratch > 0 || health.grievous > 0
 }
 
 function setUpTabButtons(){
   $20(".tab-button").on("click", e=>{
     let tabName = e.htmlAttributes.value
-
+    //All tabs get removed .active class
     $20(".tab").removeClass("active")
+    //The clicked tab gets assigned .active class, thus becomes visible
     $20(`.${tabName}`).addClass("active")
   })
 }
@@ -262,35 +263,32 @@ on("sheet:opened", () => {
 
 on("change:stamina", ()=>{
   getAttrs(["health_status", "stamina"], vals=>{
+    if(damaged(vals.health_status)){return} // Only changes health hitpoint on full hitpoints
+
     let health = vals.health_status
-    let stamina = vals.stamina
-
-    health.max = stamina + 3
-
-    if (undamaged(health)) {
-      health.full = health.max
-      health.empty = 10 - health.max
-    }
+    health.max = vals.stamina + 3
+    health.full = health.max
+    health.empty = 10 - health.max
 
     styleHitpointBoxes("health", health)
     setAttrs({health_status: health});
   })
 })
 
-on("change:resolve change:composure", ()=>{
-  getAttrs(["willpower_status", "resolve", "composure"], vals=>{
+on("change:resolve change:composure", () => {
+  getAttrs(["willpower_status", "resolve", "composure"], vals => {
+    if (damaged(vals.willpower_status)) { return } //Only change willpower on full hitpoints
+
     let composure = vals.composure
     let resolve = vals.resolve
     let willpower = vals.willpower_status
 
     willpower.max = composure + resolve
 
-    if (undamaged(willpower)) {
-      willpower.full = willpower.max
-      willpower.empty = 10 - willpower.max
-    }
+    willpower.full = willpower.max
+    willpower.empty = 10 - willpower.max
 
     styleHitpointBoxes("willpower", willpower)
-    setAttrs({willpower_status: willpower});
+    setAttrs({ willpower_status: willpower });
   })
 })
