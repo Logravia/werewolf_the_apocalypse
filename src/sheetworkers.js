@@ -242,12 +242,6 @@ function undamaged(health){
   return health.scratch === 0 && health.grievous === 0
 }
 
-function bonusHitpoints(health){
-  let bonus = (health.full + health.scratch + health.grievous) - health.max
-  if (bonus < 0) { return 0 };
-  return bonus;
-}
-
 function setUpTabButtons(){
   $20(".tab-button").on("click", e=>{
     let tabName = e.htmlAttributes.value
