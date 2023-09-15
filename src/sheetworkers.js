@@ -167,6 +167,7 @@ function styleHitpointBoxes(name, status) {
   }
 }
 
+/** Restores styles for health and willpower */
 function restoreHitpointStyles(){
   getAttrs(HITPOINT_ATTRS, vals=>{
     HITPOINT_ATTRS.forEach((attr,i)=>{
@@ -174,27 +175,36 @@ function restoreHitpointStyles(){
     })
   })
 }
-
+/** Hitpoint box value on a click should rotate from empty>full>scratch>grievous>empty
+ * @param {string} curState
+ * @return {string} next rotation value based on curState
+ * */
 function nextHitpointState(curState){
   const currentIndex = HITPOINT_ORDER.indexOf(curState);
   const nextIndex = (currentIndex + 1) % HITPOINT_ORDER.length;
   return HITPOINT_ORDER[nextIndex];
 }
 
+/**
+ * Set up click event handling for health and willpower buttons.
+ */
 function setUpHealthWillButton() {
   $20(".health-will-button").on("click", e => {
+    // Extract data from the clicked element
     let name = e.htmlAttributes["data-name"];
-    let curHitpointState = e.htmlAttributes.class.split(" ").pop() // last class should be injury type, very brittle
+    let curHitpointState = e.htmlAttributes.class.split(" ").pop() // last class is assumed be injury type, very brittle
     let attrStr = `${name}_status`
     let clickVal = parseInt(e.htmlAttributes.value);
 
     getAttrs([attrStr], vals => {
       let status = vals[attrStr]
 
+      // Allow hitbox count to be reduced if clicked on one
       if (clickVal === 1 && status.full > 1) {
         status.full -= 1
         status.empty += 1
       } else {
+        // if you click on a hitpoint box, its value disappears and gets replaced by the value in the next rotation
         status[curHitpointState] -= 1
         status[nextHitpointState(curHitpointState)] += 1
       }
@@ -207,6 +217,11 @@ function setUpHealthWillButton() {
   })
 }
 
+/**
+ * Initializes health, willpower, and crinos data for Roll20.
+ * This ensures that Roll20 saves a proper and empty JSON object to their Firebase.
+ * @param {boolean} [reset=false] - Whether to reset the data.
+ * */
 function initHealthWillCrinos(reset=false) {
   let hitpointContainers = ["health_status", "willpower_status", "crinos_status"];
   let containersToInit = {}
