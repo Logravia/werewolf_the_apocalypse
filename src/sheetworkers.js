@@ -33,6 +33,7 @@ const ATTRS = [
   'wits',
   'resolve'
 ]
+const MAX_ATTR_VALUE = 5
 const OTHER_ATTRS = ["glory", "wisdom", "honor", "rage", "hauglosk", "harano"]
 const HITPOINT_ATTRS = ["health_status", "willpower_status", "crinos_status"]
 const HITPOINT_TYPES = ["health", "willpower", "crinos"]
@@ -41,20 +42,28 @@ const MAX_HITPOINTS = 10;
 const HITPOINT_TEMPLATE = {empty: 10, full: 0, scratch: 0, grievous: 0, max: 3, bonus: 0}
 const ADVANTAGES_FLAWS = advantageFlawStrs();
 
-function applyStyleToDotButtonSet(name, value) {
-  let dotOne = $20(`.${name}[value='1']`)
-  if (value === 0 ) {
-    dotOne.removeClass("clear-me selected")
-    return;
+/**
+ * Applies .selected or .clear-me class to buttons within a set depending on value.
+ * The buttons are always a set of five.
+ * Example: Resolve ()()()()() found in the Attributes table.
+ * All buttons within a set carry the class name of the set.
+ * @param {string} name - of the attributes, skill or other.
+ * @param {number} value - the value of the attribute i.e. how high the resolve is.
+ * */
+function applyClassToDotButtonSet(name, value) {
+  const dotOne = $20(`.${name}[value='1']`);
+
+  if (value === 0) {
+    dotOne.removeClass("clear-me selected"); return;
   }
 
-  for (let i = 1; i <=5; i++) {
-    let dot = $20(`.${name}[value="${i}"]`);
-    i<=value ? dot.addClass("selected") : dot.removeClass("selected")
+  for (let i = 1; i <= MAX_ATTR_VALUE; i++) {
+    const dot = $20(`.${name}[value="${i}"]`);
+    i <= value ? dot.addClass("selected") : dot.removeClass("selected");
   }
 
   if (value === 1) {
-    dotOne.addClass("clear-me")
+    dotOne.addClass("clear-me");
   }
 }
 
@@ -72,7 +81,7 @@ function restoreAttributeStyling(arr){
   getAttrs(arr, (names_values)=> {
     let keys = Object.keys(names_values);
     keys.forEach(key=>{
-      applyStyleToDotButtonSet(key, names_values[key])
+      applyClassToDotButtonSet(key, names_values[key])
     })
   })
 }
@@ -87,7 +96,7 @@ function setUpDotValueButton() {
         dotValue = 0;
       }
 
-      applyStyleToDotButtonSet(attrToChange, dotValue);
+      applyClassToDotButtonSet(attrToChange, dotValue);
 
       setAttrs(
         {
