@@ -1,11 +1,3 @@
-function advantageFlawStrs() {
-  let arr = [];
-  for (let i = 0; i < 12; i++) {
-    arr.push(`advantage_flaw_value${i}`);
-  }
-  return arr;
-}
-
 const SKILLS = [
   "athletics",
   "brawl",
@@ -60,7 +52,7 @@ const HITPOINT_TEMPLATE = {
   max: 3,
   bonus: 0,
 };
-const ADVANTAGES_FLAWS = advantageFlawStrs();
+const ADVANTAGES_FLAWS = Array.from({ length: 12 }, (_, i) => `advantage_flaw_value${i}`);
 
 /**
  * Applies .selected or .clear-me class to buttons within a set depending on value.
