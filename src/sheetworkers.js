@@ -84,12 +84,17 @@ function resetClick(hist, clickedAttrName, clickedAttrVal) {
   return isReset;
 }
 
-function restoreDotStyling(){
-  restoreAttributeStyling(SKILLS.concat(ATTRS).concat(OTHER_ATTRS).concat(ADVANTAGES_FLAWS));
+/**
+ * @returns {Array} names of all the dot attributes such as resolve, driving, hauglosk etc*/
+function dotAttributes(){
+  return SKILLS.concat(ATTRS).concat(OTHER_ATTRS).concat(ADVANTAGES_FLAWS)
 }
 
-function restoreAttributeStyling(arr){
-  getAttrs(arr, (names_values)=> {
+/**
+ * Restores class attributes for dot sets in the sheet.
+ * This function retrieves data for dot attributes and applies them to corresponding dot sets.*/
+function restoreDotAttributeClasses(){
+  getAttrs(dotAttributes(), (names_values)=> {
     let keys = Object.keys(names_values);
     keys.forEach(key=>{
       applyClassToDotButtonSet(key, names_values[key])
@@ -99,24 +104,25 @@ function restoreAttributeStyling(arr){
 
 function setUpDotValueButton() {
   $20('.dot-value-button').on('click', e => {
-    let dotValue = parseInt(e.htmlAttributes.value);
-    let attrToChange = e.htmlAttributes["data-name"];
+    let clickedDotValue = parseInt(e.htmlAttributes.value);
+    let name = e.htmlAttributes["data-name"];
 
     getAttrs(["click_history"], hist => {
-      if (resetClick(hist, attrToChange, dotValue)) {
-        dotValue = 0;
+      if (resetClick(hist, name, clickedDotValue)) {
+        clickedDotValue = 0;
       }
 
-      applyClassToDotButtonSet(attrToChange, dotValue);
+      applyClassToDotButtonSet(name, clickedDotValue);
 
       setAttrs(
         {
-          [attrToChange]: dotValue,
-          click_history: { name: attrToChange, val: dotValue }
+          [name]: clickedDotValue,
+          click_history: { name: name, val: clickedDotValue }
         });
     })
   })
 }
+
 function clearHitpointBoxes(name){
   let classesToRemoveStr = HITPOINT_ORDER.join(" ")
 
@@ -224,7 +230,7 @@ on("sheet:opened", () => {
   initHealthWillCrinos();
   setUpDotValueButton();
   setUpHealthWillButton();
-  restoreDotStyling();
+  restoreDotAttributeClasses()
   restoreHitpointStyles();
   setUpTabButtons();
 });
