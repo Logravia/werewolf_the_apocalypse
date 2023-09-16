@@ -2,14 +2,14 @@ const path = require('path');
 const PugPlugin = require('pug-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.join(__dirname, 'dist/'),
     publicPath: '/',
   },
 
   entry: {
-    script: './src/index.js', // => dist/script.js
+    script: './src/sheetworkers.js', // => dist/script.js
     index: './src/sheet.pug', // => dist/index.html
     style: './src/style.css'
   },
