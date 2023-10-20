@@ -36,6 +36,11 @@
 
 /* ROLL TEMPLATE */
 
+/*Dark mode*/
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-werewolf-roll .sheet-werewolf-container {
+    background: #241c1c;
+}
+
 .sheet-rolltemplate-werewolf-roll {
     display: flex;
     justify-content: center;
