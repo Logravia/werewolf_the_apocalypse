@@ -725,6 +725,9 @@
         data-name="rage"></button><button class="dot-value-button rage" name="act_rage" value="5"
         data-name="rage"></button></div>
   </div>
+  <h2 class="category-title">Rolls</h2><button type="roll"
+    value="!rollWerewolf frenzy ?{Modifier}">Frenzy</button><button type="roll"
+    value="!rollWerewolf frenzy ?{Modifier}">Willpower</button>
 </div>
 <div class="back-sheet tab"><!-- BACK DESCRIPTION-->
   <table class="tenet-table">
@@ -1039,6 +1042,9 @@
       </div>
       <hr class="sheet-seperator">
       <h3 class="sheet-success-title">Successes: {{successes}}</h3>
+      <div class="sheet-flex-wrapper sheet-outcome-wrapper">
+        <div class="sheet-outcome-container">{{outcomeImage}}</div>
+      </div>
     </div>
   </rolltemplate>
 </div>

@@ -17,12 +17,13 @@ const WerewolfApo = (function () {
   // private variables and functions
   const DICE_TYPE = 10
   const ROLL_TYPES = {check: "check", harano: "harano", hauglosk: "hauglosk", willpower: "willpower", attribute: "attribute", "attributeAttribute": "attribute + attribute", attributeSkill: "attribute + skill", invalid: "invalid roll"}
-  const OUTCOMES = {success: "success", totalFailure: "total failure", criticalHit: "critical success", brutalOutcome: "Brutal outcome", neutral: "" }
+  const OUTCOMES = {success: "success", totalFailure: "totalFailure", criticalHit: "criticalHit", brutalOutcome: "brutalOutcome", neutral: "" }
   const DICE_URLS = {rage: diceURLs("rage"), normal: diceURLs("normal")}
   const GRAPHICS = {success: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/success.png",
                     totalFailure: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/failure.png",
                     criticalHit: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/critical.png",
                     brutalOutcome: "https://raw.githubusercontent.com/Logravia/werewolf_the_apocalypse/main/images/roll_outcomes/brutal.png"}
+  const OUTCOME_SIZING = { width: 180, height: 40 }
   const TEMPLATE = '&{template:werewolf-roll} '
   const DICE_SIZE = {normal: 30, larger: 35, large: 40}
   const POOL_NAMES = [
@@ -206,6 +207,11 @@ const WerewolfApo = (function () {
     return ROLL_TYPES.invalid;
   }
 
+  function makeImgFromURL(url, alt, size){
+    if (url=="" || url == undefined){ return "" }
+    return `<img src="${url}" alt="${alt}" width="${size.width}" height="${size.height}"/>`
+  }
+
   function diceImages(type="normal", roll=[]) {
     let dice = DICE_URLS[type];
     let imgStr = ""
@@ -219,8 +225,9 @@ const WerewolfApo = (function () {
   function rollMessage(dt) {
     let rageDice = diceImages("rage", dt.rageDiceResult);
     let normalDice = diceImages("normal", dt.normalDiceResult)
+    let outcomeImage = makeImgFromURL(GRAPHICS[dt.outcome], dt.outcome, OUTCOME_SIZING)
 
-    return TEMPLATE + `{{rolls=${dt.rolls}}} {{successes=${dt.successes}}} {{type=${dt.type}}} {{rage=${dt.rage}}} {{outcome=${dt.outcome}}} {{rageDice=${rageDice}}} {{normalDice=${normalDice}}}`
+    return TEMPLATE + `{{rolls=${dt.rolls}}} {{successes=${dt.successes}}} {{type=${dt.type}}} {{rage=${dt.rage}}} {{outcome=${dt.outcome}}} {{rageDice=${rageDice}}} {{normalDice=${normalDice}}} {{outcomeImage=${outcomeImage}}}`
   }
 
   return {
