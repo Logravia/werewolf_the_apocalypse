@@ -729,3 +729,57 @@ background: linear-gradient(54deg, rgba(24,22,22,1) 0%, rgba(131,48,48,1) 52%, r
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+
+/*STYLING DEFAULT ROLL BUTTON*/
+
+.ui-dialog .charsheet button[type=roll]::before {
+    content: "";
+    font-family: "oswald";
+}
+
+button[type=roll]{
+    border: 0;
+    border-radius: 0.25rem;
+    background: #39385e;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.ui-dialog .charsheet button[type="roll"], .ui-dialog .charsheet button[type="compendium"] {
+  padding: 4px 10px;
+  font-size: 1.3em;
+  margin: 0px 3px 0px 3px;
+}
+
+.btn:focus, .btn:hover {
+    color: white;
+    background-color: #5a0c0cfc;
+    transition: background-color 0.2s
+}
+
+.gift-rite-table tbody tr .roll .gifts-rites-roll-btn {
+    font-family: "dicefontd10";
+    padding: 0px 8px;
+    padding-bottom: 2px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bolder;
+    font-size: 26px;
+    line-height: 1;
+    background: #f9f9f9;
+    color: black;
+    box-shadow: none;
+    transition: background 0.5s ease-in-out;
+}
+
+.gift-rite-table tbody tr .roll .gifts-rites-roll-btn:hover {
+    background: #d5d4dc;
+    transition: background 0.7s ease-in-out;
+}
