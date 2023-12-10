@@ -102,7 +102,11 @@
 
 
 .sheet-rolltemplate-werewolf-roll .sheet-success-title {
-    font-size: 22px;
+    font-size: 23px;
+}
+
+.sheet-rolltemplate-werewolf-roll .dice-title {
+    margin-bottom: 6px;
 }
 
 
