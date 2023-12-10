@@ -185,10 +185,12 @@ const WerewolfApo = (function () {
   function rollType(msg) {
     //let diceRollConfiguration = {poolNames: [], modifier: 0}
     let poolNames = extractDiceRollConfigurationFromMessage(msg).poolNames
-    let rollStr = poolNames[0]
+
+    let rollStr = `<h3 class="sheet-roll-type">${poolNames[0]}</>`
 
     for (let i = 1; i < poolNames.length; i++) {
-      rollStr += ` + ${poolNames[i]}`
+      rollStr += `<h3 class="sheet-roll-type">+</>`
+      rollStr += `<h3 class="sheet-roll-type">${poolNames[i]}</>`
     }
 
     return rollStr;
