@@ -8,9 +8,6 @@ div.list-container
       h3.list-title #{title}
       each attr in list
         div.name-value-wrapper
-          div.name-roll-button-wrapper
-            p.attribute #{attr}
-            div.roll-btn-wrapper
-              button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
+          button(type="roll" value=`!rollWerewolf ${attr} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`).attribute-skill-roll #{attr}
           +button-set(attr, 5)
     div.centering-border

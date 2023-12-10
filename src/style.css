@@ -192,6 +192,20 @@
 }
 
 
+.ui-dialog .charactersheet .active .attribute-skill-roll {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    background: #f9f9f9;
+    color: #000;
+    box-shadow: none;
+    font-family: "Cutive",serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    padding-bottom: 3px;
+}
+
+
 /* ATTRIBUTES */
 
 .list-container {
@@ -210,8 +224,8 @@
 .centering-border {
     border: solid 1px;
     position: relative;
-    top: 25px;
-    height: 80px;
+    top: 30px;
+    height: 90px;
 }
 
 .centering-border:last-of-type {
@@ -652,6 +666,7 @@ input:focus {
 }
 
 .button-set-wrapper {
+    padding-top: 2px;
     display: flex;
     gap: 4px;
 }
