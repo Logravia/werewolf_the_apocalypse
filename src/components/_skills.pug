@@ -7,8 +7,5 @@ div.skill-flexbox
     div(class=label+'-list')
       each skill in list
         div.skill-value-wrapper
-          div.skill-roll-wrapper
-            p.skill #{skill}
-            div.roll-btn-wrapper
-              button(type="roll" value=`!rollWerewolf ${skill} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`)
+          button(type="roll" value=`!rollWerewolf ${skill} ?{Second attribute: |none|strength|dexterity|stamina|charisma|manipulation|composure|intelligence|wits|resolve} ?{Modifier}`).attribute-skill-roll #{skill}
           +button-set(skill, 5)
