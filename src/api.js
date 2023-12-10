@@ -38,6 +38,7 @@ const WerewolfApo = (function () {
   "resolve",
   "health",
   "willpower",
+  "willpower_status_num",
   "athletics",
   "brawl",
   "craft",
@@ -88,35 +89,25 @@ const WerewolfApo = (function () {
     return totalSuccessCount
   }
 
-  // Extracts dicepool names from a chat call
-  function parseCommand(msg) {
-    log(msg)
-    let rollCmd = {pool1: "", pool2: "", modifier: 0, valid: false}
+  function extractDiceRollConfigurationFromMessage(msg) {
+    log("Roll message:", msg)
+    let diceRollConfiguration = {poolNames: [], modifier: 0}
     let args = msg.content.split(' ')
 
     args.forEach(arg => {
-      if (validDicePool(arg)){
-        rollCmd.pool1 === "" ? rollCmd.pool1 = arg : rollCmd.pool2 = arg
-      }
       if (parseInt(arg)){
-        rollCmd.modifier = parseInt(arg)
-      }
-      if(riteDicestr(arg)) {
-        rollCmd.pool1 === "" ? rollCmd.pool1 = arg : rollCmd.pool2 = arg
+        diceRollConfiguration.modifier = parseInt(arg)
+      } else if(validDicePool(arg)) {
+        diceRollConfiguration.poolNames.push(arg)
       }
     }
     )
-    log(rollCmd)
-    return rollCmd
+    log("Returned dice configuration:", diceRollConfiguration)
+    return diceRollConfiguration
   }
 
   function validDicePool(name){
     return POOL_NAMES.includes(name);
-  }
-
-  function riteDicestr(str){
-    let re = /^rites_dice_\d+$/
-    return str.match(re);
   }
 
   function rollDice(count) {
@@ -131,10 +122,13 @@ const WerewolfApo = (function () {
 
   //returns total dice pool size
   function dicePoolSize(msg) {
-    let cmd = parseCommand(msg);
+    let diceConfig = extractDiceRollConfigurationFromMessage(msg);
     let charId = msg.rolledByCharacterId
-    let dicepool = [getAttrByName(charId, cmd.pool1), getAttrByName(charId, cmd.pool2), cmd.modifier]
-    log(dicepool)
+    let dicepool = [diceConfig.modifier]
+
+    diceConfig.poolNames.forEach(name=>{
+      dicepool.push(getAttrByName(charId, name))
+    })
 
     dicepool = dicepool.map(val=>parseInt(val));
     dicepool = dicepool.filter(val=>!isNaN(val))
@@ -189,22 +183,15 @@ const WerewolfApo = (function () {
   }
 
   function rollType(msg) {
-    let names  = parseCommand(msg)
+    //let diceRollConfiguration = {poolNames: [], modifier: 0}
+    let poolNames = extractDiceRollConfigurationFromMessage(msg).poolNames
+    let rollStr = poolNames[0]
 
-    if (names.length === 1) {
-      if (ROLL_TYPES[names[0]] !== undefined) {
-        return ROLL_TYPES[names[0]]
-      } else {
-        // if name is not contained in types it must be an attribute of some kind
-        return ROLL_TYPES.attribute
-      }
+    for (let i = 1; i < poolNames.length; i++) {
+      rollStr += ` + ${poolNames[i]}`
     }
 
-    if (names.length === 2) {
-      return ROLL_TYPES.attributeSkill
-    }
-
-    return ROLL_TYPES.invalid;
+    return rollStr;
   }
 
   function makeImgFromURL(url, alt, size){
