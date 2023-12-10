@@ -71,6 +71,10 @@
     justify-content: center;
 }
 
+.sheet-rolltemplate-werewolf-roll .sheet-outcome-container {
+    margin-top: 14px;
+}
+
 .sheet-rolltemplate-werewolf-roll h3  {
     font-family: "Special Elite", cursive;
     font-size: 18px;
