@@ -175,6 +175,7 @@ function setUpHealthWillButton() {
       styleHitpointBoxes(name, status);
       setAttrs({
         [attrStr]: status,
+        [`${attrStr}_num`]: status.full
       });
     });
   });
@@ -242,7 +243,7 @@ on("change:stamina", () => {
     health.empty = 10 - health.max;
 
     styleHitpointBoxes("health", health);
-    setAttrs({ health_status: health });
+    setAttrs({ health_status: health, health_status_num: health.full });
   });
 });
 
@@ -262,6 +263,6 @@ on("change:resolve change:composure", () => {
     willpower.empty = 10 - willpower.max;
 
     styleHitpointBoxes("willpower", willpower);
-    setAttrs({ willpower_status: willpower });
+    setAttrs({ willpower_status: willpower, willpower_status_num: willpower.full});
   });
 });
