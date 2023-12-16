@@ -191,18 +191,30 @@
     margin: 0;
 }
 
-
 .ui-dialog .charactersheet .active .attribute-skill-roll {
     margin: 0px 0px 0px 0px;
     padding: 0px;
     background: #f9f9f9;
-    color: #000;
+    color: #333;
     box-shadow: none;
     font-family: "Cutive",serif;
     font-weight: 600;
     font-size: 13px;
     line-height: 18px;
     padding-bottom: 3px;
+}
+
+.ui-dialog .charactersheet .active .large-roll-button {
+    font-family: "Oswald",sans-serif;
+    line-height: 27px;
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    background: #f9f9f9;
+    text-rendering: optimizelegibility;
+    box-shadow: none;
+    padding: 4px 2px;
 }
 
 

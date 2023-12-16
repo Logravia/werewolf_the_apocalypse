@@ -2,21 +2,11 @@ h2.category-title Renown
 
 div.renown-container
   div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Glory
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf glory ?{Modifier}`)
-    div.roll-btn-wrapper
+    button(type="roll" value=`!rollWerewolf glory ?{Modifier}`).large-roll-button Glory
     +button-set("glory", 5)
   div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Honor
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf honor ?{Modifier}`)
+    button(type="roll" value=`!rollWerewolf honor ?{Modifier}`).large-roll-button Honor
     +button-set("honor", 5)
   div.renown-value-wrapper
-    div.text-roll-wrapper
-      h3.renown Wisdom
-      div.roll-btn-wrapper
-        button(type="roll" value=`!rollWerewolf wisdom ?{Modifier}`)
+    button(type="roll" value=`!rollWerewolf wisdom ?{Modifier}`).large-roll-button Wisdom
     +button-set("wisdom", 5)

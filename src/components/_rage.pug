@@ -1,6 +1,3 @@
 div.rage-value-wrapper
-  div.text-roll-wrapper
-    h3.rage Rage
-    div.roll-btn-wrapper
-      button(type="roll" value=`!rollWerewolf 1`)
-  +button-set("rage", 5)
+  button(type="roll" value=`!rollWerewolf rage ?{Modifier}`).large-roll-button Rage
++button-set("rage", 5)
