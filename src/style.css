@@ -338,6 +338,7 @@ h3 {
     border: 1px solid;
     justify-content: space-between;
     padding: 5px 8px;
+    margin-bottom: 20px;
 }
 .renown-value-wrapper{
     display:flex;
@@ -353,19 +354,19 @@ h3 {
 }
 
 .table-name {
-    width: 21%
+    width: 17%
 }
 
 .table-pool {
-    width: 21%
+    width: 30%
 }
 
 .table-cost {
-    width: 8%
+    width: 7%
 }
 
 .table-notes {
-    width: 50%;
+    width: 37%;
 }
 
 .gift-rite-table th {
@@ -382,6 +383,10 @@ h3 {
     width: 100%;
     font-family: "Cutive", serif;
     font-weight: bold;
+}
+
+.table-input.table-pool-size {
+    text-align: center;
 }
 
 .gift-rite-table td.roll {
